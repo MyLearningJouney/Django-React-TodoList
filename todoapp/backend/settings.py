@@ -33,6 +33,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','dp-todoapp.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev','https://dp-todoapp.herokuapp.com']
 
 
 # Application definition
