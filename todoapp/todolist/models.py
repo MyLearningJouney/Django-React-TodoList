@@ -7,7 +7,7 @@ class TodoActivities(models.Model):
     createdDate = models.DateTimeField(auto_now_add=True)
     completedDate = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=9)
-    id = models.CharField(max_length=255)
+    id = models.CharField(max_length=255, primary_key=True)
     #user who posted this
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
