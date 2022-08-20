@@ -1,12 +1,25 @@
-from rest_framework import generics
+from rest_framework import generics,permissions
 from .serializers import TodoSerializer
 from todolist.models import TodoActivities
 
-class TodoList(generics.ListAPIView):
-    # ListAPIView requires two mandatory attributes, serializer_class and
-    # queryset.
-    # We specify TodoSerializer which we have earlier implemented
-    serializer_class = TodoSerializer  
+class TodoListCreate(generics.ListCreateAPIView):
+
+    serializer_class = TodoSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
     def get_queryset(self):
         user = self.request.user
         return TodoActivities.objects.filter(user=user).order_by('-createdDate')
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
+class TodoRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+
+    serializer_class = TodoSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return TodoActivities.objects.filter(user=user)
