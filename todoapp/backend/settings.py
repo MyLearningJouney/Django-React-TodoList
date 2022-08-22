@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "todolist",
     "rest_framework",
     "api",
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,10 @@ django_heroku.settings(locals())
 if 'DATABASE_URL' in os.environ:
     import dj_database_url
     DATABASES = {'default':dj_database_url.config()}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
