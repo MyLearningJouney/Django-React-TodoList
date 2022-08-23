@@ -5,6 +5,8 @@ class TodoSerializer(serializers.ModelSerializer):
     createdDate = serializers.ReadOnlyField()
     completedDate = serializers.ReadOnlyField()
     status = serializers.ReadOnlyField()
+#   id = serializers.ReadOnlyField()
+
     class Meta:
         model = TodoActivities
         fields = '__all__'

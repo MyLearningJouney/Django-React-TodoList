@@ -1,0 +1,32 @@
+.listTextWrapper{
+    width:85%;
+}
+  
+.listActivity{
+    display:flex;
+    padding: 5px 0;
+    margin-bottom: 5px;
+}
+  
+.listDate{
+    display:flex;
+    font-size:12px;
+}
+  
+.listIconsWrapper{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.editInput{
+    display: flex;
+    font-size: 16px;
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: solid 1px #DDD;
+  }

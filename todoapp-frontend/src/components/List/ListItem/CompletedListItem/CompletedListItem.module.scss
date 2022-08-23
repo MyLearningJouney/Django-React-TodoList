@@ -1,0 +1,29 @@
+
+.listTextWrapper{
+    width:85%;
+  }
+  
+  .listActivity{
+    display:flex;
+    padding: 5px 0;
+    margin-bottom: 5px;
+  }
+  
+  .listCompletedDate{
+    display:flex;
+    font-size:12px;
+  }
+
+  .listCompletedDate::before{
+    display:flex;
+    font-size:12px;
+    margin-right: 3px;
+    content: 'Completed at';
+  }
+  
+  .listIconsWrapper{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
