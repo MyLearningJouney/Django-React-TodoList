@@ -1,0 +1,22 @@
+@import-normalize;
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+
+body{
+  margin:0;
+  background-color: #FDFFFA;
+}
+
+.todoListWrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.inputFormWrapper{
+  display: flex;
+  justify-content: center;
+}
+

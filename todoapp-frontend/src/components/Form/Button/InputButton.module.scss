@@ -1,0 +1,26 @@
+
+.addBtn{
+    display: flex;
+    width: 75px;
+    align-items: center;
+    justify-content: center;
+    background-color: #b7ddb0;
+    border: 1px solid #b7ddb0;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+  
+    }
+  
+  .addBtn:hover{
+    display: flex;
+    width: 75px;
+    align-items: center;
+    justify-content: center;
+    background-color: #5aac44;
+    border: 1px solid #5aac44;
+    border-radius: 5px;
+    }
+  
+  .addBtnIcon{
+      color:#3f6f21;
+    }
