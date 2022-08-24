@@ -8,13 +8,16 @@ from rest_framework.authtoken.models import Token
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 
 
 class TodoListCreate(generics.ListCreateAPIView):
 
     serializer_class = TodoSerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
 
+    
     def get_queryset(self):
         user = self.request.user
         return TodoActivities.objects.filter(user=user).order_by('-createdDate')
@@ -27,6 +30,8 @@ class TodoRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
     serializer_class = TodoSerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+
 
     def get_queryset(self):
         user = self.request.user
