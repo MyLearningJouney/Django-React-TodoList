@@ -10,7 +10,7 @@ import { Route, Link } from 'react-router-dom';
 function Navbar (){
     const user = null;
     return (
-        <header className={style.navheader}>
+        <div className={style.navheader}>
             <nav className={style.navigation}>
                 <Link className={style.logo} to={"/"}>Hello!</Link>
                 <div className={style.navigationWrapper}>
@@ -33,7 +33,7 @@ function Navbar (){
                     )}
                 </div>
             </nav>
-        </header>
+        </div>
     )
 }
 
