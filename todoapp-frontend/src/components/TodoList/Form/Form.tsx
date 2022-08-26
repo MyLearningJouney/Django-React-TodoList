@@ -1,10 +1,10 @@
 import { SetStateAction, useState } from 'react';
-import { ActivityItem } from '../../types/ActivityItem';
+import { ActivityItem } from '../../../types/ActivityItem';
 import { v4 as uuidv4 } from 'uuid'; 
 import style from '../Form/Form.module.scss'
 import InputButton from './Button/InputButton'
 import Input from './Input/Input';
-import DateFormat from '../../utils/DateFormat';
+import DateFormat from '../../../utils/DateFormat';
 
 interface Props {
     setActivities: React.Dispatch<SetStateAction<ActivityItem[]>>

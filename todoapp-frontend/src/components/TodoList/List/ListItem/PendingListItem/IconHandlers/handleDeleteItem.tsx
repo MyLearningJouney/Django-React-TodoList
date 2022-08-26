@@ -1,5 +1,5 @@
 import { SetStateAction } from "react"
-import { ActivityItem } from "../../../../../types/ActivityItem"
+import { ActivityItem } from "../../../../../../types/ActivityItem"
 
 interface Props {
     activityItem: ActivityItem,
