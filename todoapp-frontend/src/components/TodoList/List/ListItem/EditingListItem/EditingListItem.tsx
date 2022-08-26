@@ -1,5 +1,5 @@
 import React, { SetStateAction, useState } from 'react';
-import { ActivityItem } from '../../../../types/ActivityItem';
+import { ActivityItem } from '../../../../../types/ActivityItem';
 import CancelIcon from '../../../Icons/CancelIcon/CancelIcon';
 import CheckIcon from '../../../Icons/CheckIcon/CheckIcon';
 import TrashIcon from '../../../Icons/TrashIcon/TrashIcon';

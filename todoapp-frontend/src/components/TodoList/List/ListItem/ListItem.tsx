@@ -1,6 +1,6 @@
 import React, { SetStateAction } from 'react';
 import style from '../ListItem/ListItem.module.scss'
-import { ActivityItem } from '../../../types/ActivityItem';
+import { ActivityItem } from '../../../../types/ActivityItem';
 import PendingListItem from './PendingListItem/PendingListItem';
 import CompletedListItem from './CompletedListItem/CompletedListItem';
 import EditingListItem from './EditingListItem/EditingListItem';

@@ -1,5 +1,6 @@
 import { SetStateAction } from "react"
-import { ActivityItem } from "../../../../../types/ActivityItem"
+import { ActivityItem } from "../../../../../../types/ActivityItem"
+import DateFormat from "../../../../../../utils/DateFormat"
 
 interface Props {
     activityItem: ActivityItem,
@@ -7,16 +8,16 @@ interface Props {
     event: React.MouseEvent<HTMLButtonElement>
 }
 
-function handleEdit({activityItem,setActivitiesList,event}: Props) {
+function handleComplete({activityItem,setActivitiesList,event}: Props) {
     event.preventDefault()
     setActivitiesList(prevActitivies => 
         prevActitivies.map(activity => 
         {
             if (activityItem.id === activity.id){
-                return {...activity, status: "editing"}
+                return {...activity, status: "completed", completedDate: DateFormat(new Date(Date.now()))}
             }
             return activity
         }))
-    }
+}
 
-export default handleEdit
+export default handleComplete

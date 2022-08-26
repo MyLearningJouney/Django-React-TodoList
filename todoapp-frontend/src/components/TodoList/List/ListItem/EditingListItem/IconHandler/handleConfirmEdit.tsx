@@ -1,23 +1,23 @@
 import { SetStateAction } from "react"
-import { ActivityItem } from "../../../../../types/ActivityItem"
-import DateFormat from "../../../../../utils/DateFormat"
+import { ActivityItem } from "../../../../../../types/ActivityItem"
 
 interface Props {
     activityItem: ActivityItem,
     setActivitiesList: React.Dispatch<SetStateAction<ActivityItem[]>>
     event: React.MouseEvent<HTMLButtonElement>
+    editActivity:string
 }
 
-function handleComplete({activityItem,setActivitiesList,event}: Props) {
+function handleConfirmEdit({activityItem,setActivitiesList,event,editActivity}: Props) {
     event.preventDefault()
     setActivitiesList(prevActitivies => 
         prevActitivies.map(activity => 
         {
             if (activityItem.id === activity.id){
-                return {...activity, status: "completed", completedDate: DateFormat(new Date(Date.now()))}
+                return {...activity, status: "pending", activity:editActivity}
             }
             return activity
         }))
 }
 
-export default handleComplete
+export default handleConfirmEdit
