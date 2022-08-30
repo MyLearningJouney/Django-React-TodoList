@@ -7,11 +7,11 @@ interface Props {
     onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
-function Navbar ({setLoginModalIsOpen, onClick} :Props){
+function Navbar ({setLoginModalIsOpen} :Props){
     
     const user = null;
         return (
-            <header className={style.navheader}>
+            <div className={style.navheader}>
                 <nav className={style.navigation}>
                     <Link className={style.logo} to={"/"}>Hello!</Link>
                     <div className={style.navigationWrapper}>
@@ -28,13 +28,13 @@ function Navbar ({setLoginModalIsOpen, onClick} :Props){
                             </ul>
                         ) : (
                             <ul className={style.buttonsList}>
-                                <li><Link className={style.signButtons} to={"/signup"} onClick={() => setLoginModalIsOpen(true)}>Sign up</Link></li>
-                                <li><Link className={style.signButtons} to={"/signin"}> Sign in </Link></li>
+                                <li><Link className={style.signButtons} to={""} onClick={() => setLoginModalIsOpen(true)}>Sign up</Link></li>
+                                <li><Link className={style.signButtons} to={""} onClick={() => setLoginModalIsOpen(true)}>Sign in </Link></li>
                             </ul>
                         )}
                     </div>
                 </nav>
-            </header>
+            </div>
         )
     }
 

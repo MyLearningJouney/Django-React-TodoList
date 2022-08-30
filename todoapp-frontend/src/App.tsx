@@ -3,10 +3,13 @@ import Navbar from './components/Navbar/Navbar';
 import TodoList from './components/TodoList/TodoList';
 import { BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
+import LoginModal from './components/Login/LoginModal';
 
 function App() {
 
 const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
+
+  console.log(loginModalIsOpen)
 
   return (
     <BrowserRouter>
@@ -14,10 +17,8 @@ const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
         <header className="App-header">
           <Navbar setLoginModalIsOpen={setLoginModalIsOpen} />
         </header>
-        <div>
-          <p>{loginModalIsOpen}</p>
-        </div>
         <TodoList />
+        {loginModalIsOpen && <LoginModal setLoginModalIsOpen={setLoginModalIsOpen} />}
     </div>
     </BrowserRouter>
   );
