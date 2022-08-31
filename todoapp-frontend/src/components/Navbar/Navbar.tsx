@@ -1,15 +1,15 @@
 import React, { SetStateAction, useState } from 'react';
 import style from '../Navbar/Navbar.module.scss'
 import { Route, Link } from 'react-router-dom';
+import { User } from '../../types/User';
 
 interface Props {
     setLoginModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
     onClick?: React.MouseEventHandler<HTMLAnchorElement>
+    user?: User | null
 }
 
-function Navbar ({setLoginModalIsOpen} :Props){
-    
-    const user = null;
+function Navbar ({setLoginModalIsOpen, user} :Props){
         return (
             <div className={style.navheader}>
                 <nav className={style.navigation}>
@@ -24,7 +24,7 @@ function Navbar ({setLoginModalIsOpen} :Props){
                     <div className={style.buttonsWrapper}>
                         { user ? (
                             <ul className={style.buttonsList}>
-                                <li><Link className={style.signButtons} to={"/home"}>Log out {(user)}</Link></li>
+                                <li><Link className={style.signButtons} to={"/home"}>Logout (<>{user}</>)</Link></li>
                             </ul>
                         ) : (
                             <ul className={style.buttonsList}>

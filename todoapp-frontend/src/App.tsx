@@ -1,27 +1,45 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import TodoList from './components/TodoList/TodoList';
-import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
 import LoginModal from './components/Login/LoginModal';
+
+
 
 function App() {
 
 const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
+const [user, setUser] = useState(null);
+const [token, setToken] = useState(null);
 
-  console.log(loginModalIsOpen)
+async function logout(){
+setUser(null);
+}
+async function signup(user = null){ // default user to null
+setUser(user);
+}
 
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <Navbar setLoginModalIsOpen={setLoginModalIsOpen} />
+          <Navbar 
+            setLoginModalIsOpen={setLoginModalIsOpen} 
+            user={user}/>
         </header>
         <TodoList />
-        {loginModalIsOpen && <LoginModal setLoginModalIsOpen={setLoginModalIsOpen} />}
+        {loginModalIsOpen && 
+          <LoginModal 
+            setLoginModalIsOpen={setLoginModalIsOpen}
+            setUser={setUser}
+            user={user}
+          />}
+          
     </div>
     </BrowserRouter>
   );
 }
 
 export default App;
+
