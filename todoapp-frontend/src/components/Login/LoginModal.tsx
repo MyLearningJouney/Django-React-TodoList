@@ -48,11 +48,11 @@ function LoginModal ({user, setUser, setLoginModalIsOpen}: Props){
         TodoAppDataService.signin(user)
             .then(response =>{
                 setToken(response.data.token);
-                setUser(user.username);
+                setUser(user);
                 console.log(user.username)
                 console.log(response.data.token)
                 localStorage.setItem('token', response.data.token);
-                localStorage.setItem('user', user.username);
+                localStorage.setItem('user', JSON.stringify(user));
                 setError('');
                 })
             .catch( e =>{

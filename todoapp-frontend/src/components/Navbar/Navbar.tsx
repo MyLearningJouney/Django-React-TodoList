@@ -24,7 +24,7 @@ function Navbar ({setLoginModalIsOpen, user} :Props){
                     <div className={style.buttonsWrapper}>
                         { user ? (
                             <ul className={style.buttonsList}>
-                                <li><Link className={style.signButtons} to={"/home"}>Logout (<>{user}</>)</Link></li>
+                                <li><Link className={style.signButtons} to={"/home"}>Logout (<>{user.username}</>)</Link></li>
                             </ul>
                         ) : (
                             <ul className={style.buttonsList}>
