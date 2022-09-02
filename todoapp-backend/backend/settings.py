@@ -166,3 +166,8 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+
+DATE_INPUT_FORMATS = ['%m/%d/%Y %H:%M']
+
+#DATETIME_INPUT_FORMATS = ['%m/%d/%y %H:%M']

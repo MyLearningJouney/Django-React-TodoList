@@ -6,51 +6,33 @@ import handlePassword from './handlers/handlePassword';
 import TodoAppDataService from '../../services/TodoAppDataService'
 import { User } from '../../types/User';
 
-
-
 interface Props {
     setLoginModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
     setUser: React.Dispatch<SetStateAction<any>>
+    setToken: React.Dispatch<SetStateAction<any>>
     onClick?: ((event: React.MouseEvent<HTMLButtonElement>) => void)
     user: User | null
 }
 
-function LoginModal ({user, setUser, setLoginModalIsOpen}: Props){
+function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [token, setToken] = useState(null);
     const [error, setError] = useState('');
 
-    function onClick(event: React.MouseEvent<HTMLButtonElement>){
+    function loginBtn(event: React.MouseEvent<HTMLButtonElement>){
         event.preventDefault()
         setLoginModalIsOpen(false)
         user = {username:username,password:password}
         login(user)
-        //const token = '03e3297c881f767f9f78b4c7e09f7972d915c5d2'
-        //console.log(user)
-        //test(token)
-    }
-
-    async function test(token:string){
-        console.log("entrou no teste")
-        TodoAppDataService.getAll(token)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(err => {
-                console.log("ERRO")
-                console.log(err)
-            })
     }
 
     async function login(user:User){
         TodoAppDataService.signin(user)
             .then(response =>{
                 setToken(response.data.token);
-                setUser(user);
-                console.log(user.username)
-                console.log(response.data.token)
+                const newUser = {...user, userid:response.data.userid}
+                setUser(newUser);
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('user', JSON.stringify(user));
                 setError('');
@@ -92,7 +74,7 @@ function LoginModal ({user, setUser, setLoginModalIsOpen}: Props){
                 >
                     Cancel
                 </button>
-                <button className={style.deleteBtn} onClick={event => onClick(event)}>
+                <button className={style.deleteBtn} onClick={event => loginBtn(event)}>
                     <Link to={""}>Log in</Link>
                 </button>
                 </div>

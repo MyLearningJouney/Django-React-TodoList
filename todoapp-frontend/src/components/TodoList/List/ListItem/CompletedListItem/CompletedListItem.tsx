@@ -18,7 +18,7 @@ function CompletedListItem ({ activityItem, setActivitiesList}: Props){
             <>
                 <div className={style.listTextWrapper}>
                     <span className={style.listActivity}>{activityItem.activity}</span>
-                    <span className={style.listCompletedDate}>{activityItem.completedDate.toString()}</span>
+                    <span className={style.listCompletedDate}>{activityItem.completedDate/*.toString()*/}</span>
                 </div>
                 <div className={style.listIconsWrapper}>
                     <CancelIcon 

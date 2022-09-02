@@ -34,7 +34,7 @@ function EditingListItem ({ activityItem, setActivitiesList}: Props){
                         placeholder={activityItem.activity}
                         onChange={handleEditChange}
                     />
-                    <span className={style.listDate}>{activityItem.createdDate.toString()}</span>
+                    <span className={style.listDate}>{activityItem.createdDate/*.toString()*/}</span>
                 </div>
                 <div className={style.listIconsWrapper}>
                     <CheckIcon 

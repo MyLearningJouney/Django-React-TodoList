@@ -20,7 +20,7 @@ function PendingListItem ({ activityItem, setActivitiesList}: Props){
             <>
                 <div className={style.listTextWrapper}>
                     <span className={style.listActivity}>{activityItem.activity}</span>
-                    <span className={style.listDate}>{activityItem.createdDate.toString()}</span>
+                    <span className={style.listDate}>{activityItem.createdDate/*.toString()*/}</span>
                 </div>
                 <div className={style.listIconsWrapper}>
                     <CheckIcon 

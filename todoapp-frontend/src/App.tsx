@@ -1,45 +1,55 @@
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import TodoList from './components/TodoList/TodoList';
-import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
-import { useState } from 'react';
-import LoginModal from './components/Login/LoginModal';
-
-
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import TodoList from "./components/TodoList/TodoList";
+import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import { useState } from "react";
+import LoginModal from "./components/Login/LoginModal";
 
 function App() {
+  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState('');
 
-const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
-const [user, setUser] = useState(null);
-const [token, setToken] = useState(null);
 
-async function logout(){
-setUser(null);
-}
-async function signup(user = null){ // default user to null
-setUser(user);
-}
+  async function signup(user = null) {
+    // default user to null
+    setUser(user);
+  }
+
+  async function logout() {
+    setUser(null);
+  }
 
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <Navbar 
-            setLoginModalIsOpen={setLoginModalIsOpen} 
-            user={user}/>
-        </header>
-        <TodoList />
-        {loginModalIsOpen && 
-          <LoginModal 
+          <Navbar
             setLoginModalIsOpen={setLoginModalIsOpen}
             setUser={setUser}
             user={user}
-          />}
-          
-    </div>
+          />
+        </header>
+        <main>
+          <div>
+            {user ? (
+              <TodoList user={user} token={token} />
+            ) : (
+              <p> Logue-se </p>
+            )}
+          </div>
+        </main>
+        {loginModalIsOpen && (
+          <LoginModal
+            setLoginModalIsOpen={setLoginModalIsOpen}
+            setUser={setUser}
+            user={user}
+            setToken={setToken}
+          />
+        )}
+      </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-
