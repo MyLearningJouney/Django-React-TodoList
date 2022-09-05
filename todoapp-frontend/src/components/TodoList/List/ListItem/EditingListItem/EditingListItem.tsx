@@ -1,5 +1,6 @@
 import React, { SetStateAction, useState } from 'react';
 import { ActivityItem } from '../../../../../types/ActivityItem';
+import { User } from '../../../../../types/User';
 import CancelIcon from '../../../Icons/CancelIcon/CancelIcon';
 import CheckIcon from '../../../Icons/CheckIcon/CheckIcon';
 import TrashIcon from '../../../Icons/TrashIcon/TrashIcon';
@@ -10,9 +11,11 @@ import handleConfirmEdit from './IconHandler/handleConfirmEdit';
 interface Props {
     activityItem: ActivityItem,
     setActivitiesList: React.Dispatch<SetStateAction<ActivityItem[]>>
+    token: string
+    user: User
 }
 
-function EditingListItem ({ activityItem, setActivitiesList}: Props){
+function EditingListItem ({ activityItem, setActivitiesList,token,user}: Props){
     
     const [editActivity, setEditActivity] = useState<string>('');
     
@@ -39,7 +42,7 @@ function EditingListItem ({ activityItem, setActivitiesList}: Props){
                 <div className={style.listIconsWrapper}>
                     <CheckIcon 
                         type={"todolist"} 
-                        onClick={event => handleConfirmEdit({event,setActivitiesList,activityItem,editActivity})}
+                        onClick={event => handleConfirmEdit({event,setActivitiesList,activityItem,editActivity,token,user})}
                     />
                     <CancelIcon 
                         type={"todolist"} 

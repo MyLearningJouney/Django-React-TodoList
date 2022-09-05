@@ -17,11 +17,11 @@ class TodoAppDataService{
     }
     deleteTodo(id, token){
         axios.defaults.headers.common["Authorization"] = "Token " + token;
-        return axios.delete(`http://localhost:8000/api/todoactivities/${id}`);
+        return axios.delete(`https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/todoactivities/${id}`);
     }
-    completeTodo(id, token){
+    updateTodo(id, data, token){
         axios.defaults.headers.common["Authorization"] = "Token " + token;
-        return axios.put(`http://localhost:8000/api/todoactivities/${id}/complete`);
+        return axios.put(`https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/todoactivities/${id}`, data);
     }
     signin(data){
         console.log(data)

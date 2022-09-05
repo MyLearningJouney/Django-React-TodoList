@@ -19,6 +19,7 @@ function App() {
   async function logout() {
     setUser(null);
   }
+  
 
   return (
     <BrowserRouter>
