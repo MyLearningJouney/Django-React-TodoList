@@ -20,7 +20,8 @@ class TodoListCreate(generics.ListCreateAPIView):
     
     def get_queryset(self):
         user = self.request.user
-        return TodoActivities.objects.filter(user=user).order_by('-createdDate')
+        print(user.id)
+        return TodoActivities.objects.filter(user=user).order_by('createdDate')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -55,20 +56,23 @@ def signup(request):
 
 
 @csrf_exempt
-def login(request):
+def signin(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
         user = authenticate(
             request,
             username=data['username'],
-            password=data['password'])
+            password=data['password'],
+            )
     if user is None:
         return JsonResponse(
             {'error':'unable to login. check username and password'},
             status=400)
     else: # return user token
+        current_user = user.id
+        print(current_user)
         try:
             token = Token.objects.get(user=user)
         except: # if token not in db, create a new one
             token = Token.objects.create(user=user)
-        return JsonResponse({'token':str(token)}, status=201)
+        return JsonResponse({'token':str(token),'userid':int(current_user)}, status=201)

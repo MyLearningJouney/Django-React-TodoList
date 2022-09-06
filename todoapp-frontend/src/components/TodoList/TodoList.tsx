@@ -1,23 +1,49 @@
-import React, { useState } from 'react';
-import List from './List/List'
-import Form from './Form/Form'
-import { ActivityItem } from '../../types/ActivityItem';
-import style from '../TodoList/TodoList.module.scss'
+import React, { useEffect, useState } from "react";
+import List from "./List/List";
+import Form from "./Form/Form";
+import { ActivityItem } from "../../types/ActivityItem";
+import style from "../TodoList/TodoList.module.scss";
+import TodoAppDataService from "../../services/TodoAppDataService";
+import { User } from "../../types/User";
 
+interface Props {
+    token: string 
+    user: User;
+}
 
-function TodoList() {
-  const [activitiesList, setActivitiesList] = useState<ActivityItem[]>([]);
+function TodoList({ token, user }: Props) {
+    const [activitiesList, setActivitiesList] = useState<ActivityItem[]>([]);
+
+    const retrieveTodos = () => {
+        TodoAppDataService.getAll(token)
+        .then((response) => {
+            setActivitiesList(response.data);
+
+        })
+        .catch((e) => {
+            console.log(e);
+        });
+    };
+
+    useEffect(() => {
+        retrieveTodos();
+    }, [token]);
+
 
   return (
     <div className="TodoList">
       <section>
+        <div><p>Userid = {user?.userid}</p></div>
         <div className={style.todoListWrapper}>
-          <List 
+          <List
             activitiesList={activitiesList}
-            setActivitiesList={setActivitiesList}/>
+            setActivitiesList={setActivitiesList}
+            token={token}
+            user={user}
+          />
         </div>
         <div className={style.inputFormWrapper}>
-          <Form setActivities={setActivitiesList}/>
+          <Form setActivities={setActivitiesList} token={token} user={user} />
         </div>
       </section>
     </div>

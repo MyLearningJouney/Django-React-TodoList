@@ -1,5 +1,6 @@
 import React, { SetStateAction, useState } from 'react';
 import { ActivityItem } from '../../../../../types/ActivityItem';
+import { User } from '../../../../../types/User';
 import CancelIcon from '../../../Icons/CancelIcon/CancelIcon';
 import CheckIcon from '../../../Icons/CheckIcon/CheckIcon';
 import TrashIcon from '../../../Icons/TrashIcon/TrashIcon';
@@ -10,9 +11,11 @@ import handleConfirmEdit from './IconHandler/handleConfirmEdit';
 interface Props {
     activityItem: ActivityItem,
     setActivitiesList: React.Dispatch<SetStateAction<ActivityItem[]>>
+    token: string
+    user: User
 }
 
-function EditingListItem ({ activityItem, setActivitiesList}: Props){
+function EditingListItem ({ activityItem, setActivitiesList,token,user}: Props){
     
     const [editActivity, setEditActivity] = useState<string>('');
     
@@ -21,7 +24,6 @@ function EditingListItem ({ activityItem, setActivitiesList}: Props){
         const currentEditActivity = event.target.value;
         setEditActivity?.(currentEditActivity)
     }
-
 
     return(
             <>
@@ -34,12 +36,12 @@ function EditingListItem ({ activityItem, setActivitiesList}: Props){
                         placeholder={activityItem.activity}
                         onChange={handleEditChange}
                     />
-                    <span className={style.listDate}>{activityItem.createdDate.toString()}</span>
+                    <span className={style.listDate}>{activityItem.createdDate/*.toString()*/}</span>
                 </div>
                 <div className={style.listIconsWrapper}>
                     <CheckIcon 
                         type={"todolist"} 
-                        onClick={event => handleConfirmEdit({event,setActivitiesList,activityItem,editActivity})}
+                        onClick={event => handleConfirmEdit({event,setActivitiesList,activityItem,editActivity,token,user})}
                     />
                     <CancelIcon 
                         type={"todolist"} 
