@@ -3,5 +3,5 @@ export interface ActivityItem {
     createdDate: string, 
     completedDate: string,
     status: "pending" | "editing" | "completed",
-    id: string
+    id?: string
 }

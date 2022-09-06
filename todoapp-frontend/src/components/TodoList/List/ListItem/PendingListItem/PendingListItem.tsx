@@ -7,25 +7,27 @@ import handleComplete from './IconHandlers/handleCompleteItem';
 import style from '../PendingListItem/PendingListItem.module.scss'
 import handleDelete from './IconHandlers/handleDeleteItem';
 import handleEdit from './IconHandlers/handleEditItem';
+import { User } from '../../../../../types/User';
 
 interface Props {
     activityItem: ActivityItem,
     setActivitiesList: React.Dispatch<SetStateAction<ActivityItem[]>>
+    token: string
+    user: User
 }
 
-function PendingListItem ({ activityItem, setActivitiesList}: Props){
-
+function PendingListItem ({ activityItem, setActivitiesList, token, user}: Props){
 
     return(
             <>
                 <div className={style.listTextWrapper}>
                     <span className={style.listActivity}>{activityItem.activity}</span>
-                    <span className={style.listDate}>{activityItem.createdDate.toString()}</span>
+                    <span className={style.listDate}>{activityItem.createdDate/*.toString()*/}</span>
                 </div>
                 <div className={style.listIconsWrapper}>
                     <CheckIcon 
                         type={"todolist"} 
-                        onClick={event => handleComplete({event,setActivitiesList,activityItem})}
+                        onClick={event => handleComplete({event,setActivitiesList,activityItem,token,user})}
                     />
                     <PencilIcon 
                         type={"todolist"} 
@@ -33,7 +35,7 @@ function PendingListItem ({ activityItem, setActivitiesList}: Props){
                     />
                     <TrashIcon 
                         type={"todolist"} 
-                        onClick={event => handleDelete({event,setActivitiesList,activityItem})}
+                        onClick={event => handleDelete({event,setActivitiesList,activityItem,token})}
                     />
                 </div>
             </>

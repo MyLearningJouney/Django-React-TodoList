@@ -32,8 +32,16 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','dp-todoapp.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev','https://dp-todoapp.herokuapp.com']
+ALLOWED_HOSTS = ['*']
+
+
+CSRF_TRUSTED_ORIGINS = [
+
+    'https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev',
+    'https://dp-todoapp.herokuapp.com',
+    'https://mylearningjouney-django-react-todolist-qvggqv9w25v7-3000.githubpreview.dev',
+
+]
 
 
 # Application definition
@@ -45,13 +53,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "todolist",
-    "rest_framework",
-    "api",
     "rest_framework.authtoken",
+    "rest_framework",
+    "todolist",
+    "api",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -59,6 +69,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -146,10 +157,17 @@ if 'DATABASE_URL' in os.environ:
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES':[
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES':(
         'rest_framework.authentication.TokenAuthentication',
-    ]
+    )
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+DATE_INPUT_FORMATS = ['%m/%d/%Y %H:%M']
+
+#DATETIME_INPUT_FORMATS = ['%m/%d/%y %H:%M']
