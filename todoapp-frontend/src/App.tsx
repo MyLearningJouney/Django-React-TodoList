@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import TodoList from "./components/TodoList/TodoList";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import LoginModal from "./components/Login/LoginModal";
 
@@ -15,11 +15,6 @@ function App() {
     // default user to null
     setUser(user);
   }
-
-  async function logout() {
-    setUser(null);
-  }
-  
 
   return (
     <BrowserRouter>

@@ -25,7 +25,6 @@ function EditingListItem ({ activityItem, setActivitiesList,token,user}: Props){
         setEditActivity?.(currentEditActivity)
     }
 
-
     return(
             <>
                 <div className={style.listTextWrapper}>

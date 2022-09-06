@@ -12,7 +12,6 @@ interface Props{
 }
 
 function List ({ activitiesList, setActivitiesList, token, user }: Props){
-    console.log(activitiesList)
     return (
         <ul className={style.todoList}>
         {  

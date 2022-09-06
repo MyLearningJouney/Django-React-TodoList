@@ -1,6 +1,6 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { SetStateAction } from 'react';
 import style from '../Navbar/Navbar.module.scss'
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { User } from '../../types/User';
 
 interface Props {
