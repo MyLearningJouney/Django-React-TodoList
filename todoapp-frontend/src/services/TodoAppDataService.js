@@ -6,8 +6,6 @@ class TodoAppDataService{
         return axios.get('https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/todoactivities');
     }
     createTodo(data, token){
-        //console.log(userid)
-        //axios.defaults.headers.common["user"] = userid;
         axios.defaults.headers.common["Authorization"] = "Token " + token;
         return axios.post("https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/todoactivities", data);
     }
@@ -29,7 +27,7 @@ class TodoAppDataService{
          data);
     }
     signup(data){
-        return axios.post("http://localhost:8000/api/signup/", data);
+        return axios.post("ttps://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/signup/", data);
     }
 }
 

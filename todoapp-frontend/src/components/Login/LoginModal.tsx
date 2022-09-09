@@ -5,7 +5,6 @@ import handleUsername  from '../Login/handlers/handleUsername'
 import handlePassword from './handlers/handlePassword';
 import TodoAppDataService from '../../services/TodoAppDataService'
 import { User } from '../../types/User';
-import DateFormat from '../../utils/DateFormat';
 
 interface Props {
     setLoginModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
@@ -26,8 +25,6 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
         setLoginModalIsOpen(false)
         user = {username:username,password:password}
         login(user)
-        console.log(DateFormat(new Date(Date.now())))
-        console.log(new Date())
     }
 
     async function login(user:User){

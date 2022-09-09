@@ -1,0 +1,193 @@
+p{
+    color:#000
+  }
+  
+  
+.darkBG {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    transition: all 0.5s ease;
+}
+    
+.centered {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+    
+.modal {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 600px;
+    background: white;
+    color: white;
+    z-index: 10;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+ 
+.modalHeader {
+    height: 50px;
+    background: white;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.validationTextWrapper{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.validationTextWrapper > p {
+    color:#000;
+    font-size: 12px;
+}
+
+.validationTextWrapper > p.invalid {
+    color:#ff3e4e;
+    margin: 0px;
+}
+
+.validationTextWrapper > p.valid {
+    color:#217e0f;
+    margin: 0px;
+}
+
+.validationInvalidlIcon{
+    color:#ff3e4e;
+    margin-right: 15px;
+}
+
+.validationValidIcon{
+    color:#217e0f;
+    margin-right: 15px;
+}
+
+
+.validationTitle{
+    color:#000;
+}
+
+
+.heading {
+    margin: 0;
+    padding: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+}
+    
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    color: #2c3e50;
+}
+    
+.inputForm{
+    display: flex;
+    flex-direction: column;
+}
+  
+.formContentWrapper{
+    display: flex;
+    flex-direction: column;
+}
+  
+.modalActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+}
+    
+.actionsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+    
+.closeBtn {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    right: 0;
+    top: 0;
+    align-self: flex-end;
+    margin-top: -7px;
+    margin-right: -7px;
+}
+    
+.closeBtn:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: translate(-4px, 4px);
+}
+    
+.signupBtnActive {
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: none;
+    color: #fff;
+    background: #ff3e4e;
+    transition: all 0.25s ease;
+}
+    
+.signupBtnActive:hover {
+    box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
+    transform: translateY(-5px);
+    background: #ff3e4e;
+}
+
+.signupBtnInactive {
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: none;
+    color: #fff;
+    background: #f59fa6;
+}
+    
+    
+.cancelBtn {
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: none;
+    color: #2c3e50;
+    background: #fcfcfc;
+    transition: all 0.25s ease;
+}
+    
+.cancelBtn:hover {
+    box-shadow: none;
+    transform: none;
+    background: whitesmoke;
+}
