@@ -18,6 +18,8 @@ class TodoAppDataService{
         return axios.delete(`https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/todoactivities/${id}`);
     }
     updateTodo(id, data, token){
+        console.log(id)
+        console.log(token)
         axios.defaults.headers.common["Authorization"] = "Token " + token;
         return axios.put(`https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/todoactivities/${id}`, data);
     }
@@ -27,7 +29,7 @@ class TodoAppDataService{
          data);
     }
     signup(data){
-        return axios.post("ttps://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/signup/", data);
+        return axios.post("https://mylearningjouney-django-react-todolist-qvggqv9w25v7-8000.githubpreview.dev/api/signup/", data);
     }
 }
 

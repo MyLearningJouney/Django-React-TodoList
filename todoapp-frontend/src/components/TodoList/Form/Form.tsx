@@ -27,14 +27,15 @@ function Form({ setActivities, token, user }: Props) {
             completedDate: DateFormat(new Date()),
             status: "pending",
         };
-        setActivities((prevActitivies) => [...prevActitivies, newActivity]);
-        
+        //setActivities((prevActitivies) => [...prevActitivies, newActivity]);
         const createdDateDB = DateFormatDB(newActivity.createdDate)
         const completedDateDB = DateFormatDB(newActivity.completedDate)
         const newActiviyDB = {...newActivity, createdDate: createdDateDB,completedDate: completedDateDB, user: user.userid}
         TodoAppDataService.createTodo(newActiviyDB, token)
             .then((response) => {
                 console.log(response.data);
+                setActivities((prevActitivies) => [...prevActitivies, response.data]);
+
         })
             .catch((e) => {
                 console.log(e);

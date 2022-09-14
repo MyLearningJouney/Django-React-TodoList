@@ -12,12 +12,6 @@ function App() {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState('');
 
-
-  async function signup(user = null) {
-    // default user to null
-    setUser(user);
-  }
-
   return (
     <BrowserRouter>
       <div className="App">

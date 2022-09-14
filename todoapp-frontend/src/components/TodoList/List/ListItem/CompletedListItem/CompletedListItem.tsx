@@ -17,7 +17,6 @@ interface Props {
 
 function CompletedListItem ({ activityItem, setActivitiesList, user, token}: Props){
     
-
     return(
             <>
                 <div className={style.listTextWrapper}>

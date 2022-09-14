@@ -6,7 +6,6 @@ import { User } from '../../types/User';
 import handleValidatePassword from './handlers/handleValidatePassword';
 import handlePassword from './handlers/handlePassword';
 import handleUsername from './handlers/handleUsername';
-import handleDisable from './handlers/handleDisable';
 
 interface Props {
     setSignupModalIsOpen: React.Dispatch<SetStateAction<boolean>>,

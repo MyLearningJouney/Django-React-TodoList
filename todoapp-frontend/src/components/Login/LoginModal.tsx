@@ -34,7 +34,7 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
                 const newUser = {...user, userid:response.data.userid}
                 setUser(newUser);
                 localStorage.setItem('token', response.data.token);
-                localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('user', JSON.stringify(newUser));
                 setError('');
                 })
             .catch( e =>{
