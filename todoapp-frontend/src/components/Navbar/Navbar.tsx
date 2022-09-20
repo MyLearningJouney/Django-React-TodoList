@@ -40,8 +40,8 @@ function Navbar ({setLoginModalIsOpen, setUser, user,setSignupModalIsOpen} :Prop
                         </ul>
                     ) : (
                         <ul className={style.buttonsList}>
-                            <li><Link className={style.signButtons} to={""} onClick={() => setSignupModalIsOpen(true)}>Sign up</Link></li>
-                            <li><Link className={style.signButtons} to={""} onClick={() => setLoginModalIsOpen(true)}>Sign in </Link></li>
+                            <li><Link className={style.loginButton} to={""} onClick={() => setLoginModalIsOpen(true)}>Log in </Link></li>
+                            <li><Link className={style.signInButton} to={""} onClick={() => setSignupModalIsOpen(true)}>Sign up</Link></li>
                         </ul>
                     )}
                 </div>

@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import LoginModal from "./components/Login/LoginModal";
 import SignupModal from "./components/Signup/SignupModal";
+import Homepage from "./components/Homepage/Homepage";
 
 function App() {
   const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
@@ -24,14 +25,13 @@ function App() {
           />
         </header>
         <main>
-          <div>
+          <>
             {user ? (
               <TodoList user={user} token={token} />
             ) : (
-              <p> Logue-se </p>
+              <Homepage />
             )}
-          </div>
-        </main>
+          </>
         {loginModalIsOpen && (
           <LoginModal
             setLoginModalIsOpen={setLoginModalIsOpen}
@@ -45,6 +45,7 @@ function App() {
             setSignupModalIsOpen={setSignupModalIsOpen}
           />
         )}
+        </main>
       </div>
     </BrowserRouter>
   );

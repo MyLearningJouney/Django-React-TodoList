@@ -5,3 +5,11 @@ body, html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
+
+.App-header{
+    position:fixed;
+    z-index:5;
+    left: 0;
+    right: 0;
+    top: 0;
+}

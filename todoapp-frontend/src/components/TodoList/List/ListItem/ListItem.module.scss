@@ -28,6 +28,12 @@
   opacity: 1;    
   filter:none;
 }
+
+
+.listItem.completedActivity:hover{
+  transform:scale(1);
+}
+
   
 .listTextWrapper{
   width:85%;

@@ -1,11 +1,12 @@
 import React, { SetStateAction, useState } from 'react';
-import { Route, Link } from 'react-router-dom';
 import style from '../Signup/SignupModal.module.scss'
 import TodoAppDataService from '../../services/TodoAppDataService'
 import { User } from '../../types/User';
 import handleValidatePassword from './handlers/handleValidatePassword';
 import handlePassword from './handlers/handlePassword';
 import handleUsername from './handlers/handleUsername';
+import WaveUp from '../Svg/WaveUp/WaveUp';
+import WaveDown from '../Svg/WaveDown/WaveDown';
 
 interface Props {
     setSignupModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
@@ -22,6 +23,12 @@ function SignupModal ({setSignupModalIsOpen}: Props){
     const [haveCapital, sethaveCapital] = useState(false)
     const [haveNumber, sethaveNumber] = useState(false)
     const [haveLength, setHaveLength] = useState(false)
+    const [usernameLabel, setUsernameLabel] = useState(false)
+    const [passwordLabel, setPasswordLabel] = useState(false)
+    const [confirmPasswordLabel, setConfirmPasswordLabel] = useState(false)
+    const [swing, setSwing] = useState(true)
+    const [isPasswordEmpty, setIsPasswordEmpty] = useState(true)
+
 
     const [error, setError] = useState('');
 
@@ -40,7 +47,15 @@ function SignupModal ({setSignupModalIsOpen}: Props){
             .catch( e =>{
                 console.log('signup', e);
                 setError(e.toString());
+                console.log(error)
             });
+    }
+
+    function handleSwing (event: React.MouseEvent<HTMLDivElement, MouseEvent>){
+        event.preventDefault()
+        setSwing(false)
+        setTimeout(() => { setSwing(true) }, 1000);
+
     }
     
     return (
@@ -51,59 +66,72 @@ function SignupModal ({setSignupModalIsOpen}: Props){
             <button className={style.closeBtn} onClick={() => setSignupModalIsOpen(false)}>
                 X
             </button>
+            <WaveUp />
             <div className={style.modalHeader}>
                 <h5 className={style.heading}>Register</h5>
             </div>
-            <div className={style.validationWrapper}>
-                <h5 className={style.validationTitle}>Password must contain the following:</h5>
-                <div className={style.validationTextWrapper}>
-                    <i className={haveLetter ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}/>
-                    <p id="letter" className={haveLetter ? style.valid : style.invalid}>A <b>lowercase</b> letter</p>
-                </div>
-                <div className={style.validationTextWrapper}>
-                    <i className={haveCapital ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}/>
-                    <p id="capital" className={haveCapital ? style.valid : style.invalid}>A <b>capital (uppercase)</b> letter</p>
-                </div>
-                <div className={style.validationTextWrapper}>
-                    <i className={haveNumber ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}/>
-                    <p id="number" className={haveNumber ? style.valid : style.invalid}>A <b>number</b></p>
-                </div>
-                <div className={style.validationTextWrapper}>
-                    <i className={haveLength ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}/>
-                    <p id="length" className={haveLength ? style.valid : style.invalid}>Minimum <b>8 characters</b></p>
-                </div>
+            <div>
+                <p className={style.headingParagraph}>
+                    Join us now!
+                </p>
             </div>
             <div className={style.modalContent}>      
             <form className={style.inputForm}>
                 <div className={style.formContentWrapper}>
-                    <label>Username</label>
+                    <label className={usernameLabel ? style.show: style.hide}>Username</label>
                     <input 
                         type={'text'} 
                         name={'activityInput'} 
-                        placeholder={'Type your username'} 
+                        placeholder={'Username'} 
                         onChange={event => handleUsername({event, setUsername, password, validatePassword,setIsDisable, setHaveLetter, sethaveCapital, sethaveNumber,setHaveLength})}
+                        onFocus={() => setUsernameLabel(true)}
+                        onBlur={() => setUsernameLabel(false)}
                         required
-                        />
-                    <label>Password</label>
+                    />
+                    <label className={passwordLabel ? style.show: style.hide}>Password</label>
                     <input
                         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                        type={'password'} 
+                        type={'Password'} 
                         name={'activityInput'}
                         placeholder={'Type your password'} 
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        onChange={event => handlePassword({event, setPassword, setHaveLetter, sethaveCapital, sethaveNumber,setHaveLength, validatePassword, username, setIsDisable})}
-                        required />
-                    <label>Confirm your Password</label>
+                        onChange={event => handlePassword({event, setPassword, setHaveLetter, sethaveCapital, sethaveNumber,setHaveLength, validatePassword, username, setIsDisable, setIsPasswordEmpty})}
+                        onFocus={() => setPasswordLabel(true)}
+                        onBlur={() => setPasswordLabel(false)}
+                        required 
+                    />
+                    <label className={confirmPasswordLabel ? style.show: style.hide}>Confirm Password</label>
                     <input 
                         type={'password'}
                         name={'activityInput'} 
-                        placeholder={'Repeat your password'}
+                        placeholder={'Confirm your password'}
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         onChange={event => handleValidatePassword({event, setValidatePassword, password, validatePassword, username, setIsDisable, setHaveLetter, sethaveCapital, sethaveNumber,setHaveLength})}
+                        onFocus={() => setConfirmPasswordLabel(true)}
+                        onBlur={() => setConfirmPasswordLabel(false)}
                         required
-                        />
+                    />
                 </div>
-            </form>         
+            </form>     
+                <div className={style.validationWrapper}>
+                    <h5 className={style.validationTitle}>Password must contain the following:</h5>
+                    <div className={`${style.validationTextWrapper} ${haveLetter ? '' : `${isPasswordEmpty ? '' : `${swing ? '' : style.swing}`}`}`}>
+                        <i className={`${isPasswordEmpty ? style.transparentIcon : `${haveLetter ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}`}`}/>
+                        <p id="letter" className={`${ isPasswordEmpty ? style.normal: `${haveLetter ? style.valid : style.invalid}`}`}>A <b>lowercase</b> letter</p>
+                    </div>
+                    <div className={`${style.validationTextWrapper} ${haveCapital ? '' : `${isPasswordEmpty ? '' : `${swing ? '' : style.swing}`}`}`}>
+                        <i className={`${isPasswordEmpty ? style.transparentIcon : `${haveCapital ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}`}`}/>
+                        <p id="capital" className={`${ isPasswordEmpty ? style.normal: `${haveCapital ? style.valid : style.invalid}`}`}>A <b>capital (uppercase)</b> letter</p>
+                    </div>
+                    <div className={`${style.validationTextWrapper} ${haveNumber ? '' : `${isPasswordEmpty ? '' : `${swing ? '' : style.swing}`}`}`}>
+                        <i className={`${isPasswordEmpty ? style.transparentIcon : `${haveNumber ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}`}`}/>
+                        <p id="number" className={`${ isPasswordEmpty ? style.normal: `${haveNumber ? style.valid : style.invalid}`}`}>A <b>number</b></p>
+                    </div>
+                    <div className={`${style.validationTextWrapper} ${haveLength ? '' : `${isPasswordEmpty ? '' : `${swing ? '' : style.swing}`}`}`}>
+                        <i className={`${isPasswordEmpty ? style.transparentIcon : `${haveLength ? `fa-solid fa-check ${style.validationValidIcon}`  : `fa-solid fa-x ${style.validationInvalidlIcon}`}`}`}/>
+                        <p id="length" className={`${ isPasswordEmpty ? style.normal: `${haveLength ? style.valid : style.invalid}`}`}>Minimum <b>8 characters</b></p>
+                    </div>
+                </div>    
             </div>
             <div className={style.modalActions}>
                 <div className={style.actionsContainer}>
@@ -121,11 +149,9 @@ function SignupModal ({setSignupModalIsOpen}: Props){
                     Register
                 </button>
                 </div>
+                <div className={isDisable ? style.mask : style.hide} onClick={event => handleSwing(event)}></div>
             </div>
-            <div>
-                <p>{username}</p>
-                <p>{password}</p>
-            </div>
+            <WaveDown />
             </div>
         </div>
         </>

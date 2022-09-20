@@ -14,7 +14,8 @@ interface Props {
 function TodoList({ token, user }: Props) {
     const [activitiesList, setActivitiesList] = useState<ActivityItem[]>([]);
 
-    const retrieveTodos = () => {
+    useEffect(() => {      
+      const retrieveTodos = () => {
         TodoAppDataService.getAll(token)
         .then((response) => {
             setActivitiesList(response.data);
@@ -23,17 +24,17 @@ function TodoList({ token, user }: Props) {
         .catch((e) => {
             console.log(e);
         });
-    };
-
-    useEffect(() => {
-        retrieveTodos();
+      };
+      retrieveTodos();
     }, [token]);
 
 
   return (
     <div className="TodoList">
       <section>
-        <div><p>Userid = {user?.userid}</p></div>
+        <div className={style.titleWrapper}>
+          <h1 className={style.title}>Welcome back {user?.username}</h1>
+        </div>
         <div className={style.todoListWrapper}>
           <List
             activitiesList={activitiesList}
