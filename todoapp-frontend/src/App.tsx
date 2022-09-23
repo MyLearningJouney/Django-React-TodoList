@@ -25,13 +25,13 @@ function App() {
           />
         </header>
         <main>
-          <>
             {user ? (
               <TodoList user={user} token={token} />
             ) : (
-              <Homepage />
+              <Homepage             
+                setSignupModalIsOpen={setSignupModalIsOpen}
+              />
             )}
-          </>
         {loginModalIsOpen && (
           <LoginModal
             setLoginModalIsOpen={setLoginModalIsOpen}

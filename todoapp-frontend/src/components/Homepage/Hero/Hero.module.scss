@@ -1,0 +1,149 @@
+.titleFixed h1 {
+    font-size: 85px;
+    margin: 15px 0;
+    font-weight: 500;
+    position: relative;
+    top: calc(100vh - 70%);
+    color:#2c3e50;
+}
+
+.titleFixed > h3{
+    font-size: 30px;
+    margin: 0;
+    font-weight: 300;
+    position: relative;
+    top: calc(100vh - 70%);
+    color:#2c3e50;
+}
+
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.textWrapper{
+    margin-top: 85px;
+    width: 35%
+}
+
+.titleAnimated{
+    position: absolute;
+    height: 90px;
+    overflow: hidden;
+    top: calc(100vh + -80%);
+}
+
+.message {
+    background-color: #5aac44;
+    color: #FFF;
+    overflow: hidden;
+    animation: openclose 7s ease-in-out infinite;
+    position: relative;
+
+}
+
+.word1, .word2, .word3 {
+    font-size: 85px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.titleFixed{
+    position: absolute;
+    top: calc(100vh - 70%);
+}
+
+.svgWrapper{
+    display:flex;
+    z-index:1;
+}
+
+.signUpButton{
+    padding: 11px 75px;
+    border-radius: 12px;
+    border: none;
+    color: #fff;
+    background: #5aac44;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    left: 25%;
+    top: 60%;
+    transition: all 0.25s ease;
+
+}
+
+.signUpButton:hover {
+    box-shadow: 0 10px 20px -10px rgba(72, 138, 54, 0.8);
+    top:calc(60% - 5px);
+    background: #5aac44;
+}
+
+
+@keyframes openclose {
+    0% {
+        width: 0;
+    }
+    5% {
+        width: 0;
+    }
+    15% {
+        width: 420px;
+    }
+    30% {
+        width: 420px;
+    }
+    33% {
+        top: 0;
+        width: 0;
+    }
+    36% {
+        top: 0;
+        width: 0;
+    }
+    38% {
+        top: -100px;
+        width: 0;
+    }
+    45% {
+        top: -100px;
+        width: 450px;
+    }
+    60% {
+        top: -100px;
+        width: 450px;
+    }
+    62% {
+        top: -100px;
+        width: 0;
+    }
+    66% {
+        top: -150px;
+        width: 0;
+    }
+    71% {
+        top: -200px;
+        width: 0;
+    }
+    86% {
+        top: -200px;
+        width: 450px;
+    }
+    95% {
+        top: -200px;
+        width: 450px;
+    }
+    98% {
+        top: -200px;
+        width: 0px;
+    }
+    100% {
+        top: 0;
+        width: 0;
+      }
+}

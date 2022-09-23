@@ -30,6 +30,7 @@ function Navbar ({setLoginModalIsOpen, setUser, user,setSignupModalIsOpen} :Prop
                     <ul className={style.navigationlist}>
                         <li><Link className={style.navLink} to={"/home"}>Home</Link></li>
                         <li><Link className={style.navLink} to={"/about"}>About</Link></li>
+                        <li><Link className={style.navLink} to={"/features"}>Features</Link></li>
                         <li><Link className={style.navLink} to={"/contact"}>Contact</Link></li>
                     </ul>
                 </div>

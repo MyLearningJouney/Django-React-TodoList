@@ -31,7 +31,7 @@ function TodoList({ token, user }: Props) {
 
   return (
     <div className="TodoList">
-      <section>
+      <section className={style.todoSection}>
         <div className={style.titleWrapper}>
           <h1 className={style.title}>Welcome back {user?.username}</h1>
         </div>

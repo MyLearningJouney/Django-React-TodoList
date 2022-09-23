@@ -1,23 +1,33 @@
+import { SetStateAction } from 'react';
 import style from '../Homepage/Homepage.module.scss'
-import Home from '../Svg/Home/Home';
+import Home from '../Svg/HeroSvg/HeroSvg';
+import Features from './Features/Features';
+import Hero from './Hero/Hero';
 
-function Homepage () {
+interface Props {
+    setSignupModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
+}
+
+function Homepage ({setSignupModalIsOpen}:Props) {
 
     return (
-        <>
+        <div className={style.homepage}>
             <section className={style.hero}>
+                <div className={style.heroDiv}></div>
+                <Hero               
+                    setSignupModalIsOpen={setSignupModalIsOpen}
+                />
+            </section>
+            <section className={style.about}>
+                <Features />
+            </section>
+            <section className={style.features}>
                 <Home />
             </section>
-            <section className={style.hero}>
+            <section className={style.contact}>
                 <Home />
             </section>
-            <section className={style.hero}>
-                <Home />
-            </section>
-            <section className={style.hero}>
-                <Home />
-            </section>
-        </>
+        </div>
     )
 }
 
