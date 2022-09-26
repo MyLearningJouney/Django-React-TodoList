@@ -1,0 +1,87 @@
+.deleteSvg{
+    width: 650px;
+}
+
+
+#paperAnimation{
+    opacity:0;
+    animation: deletePaper 2s
+
+}
+
+#armMoviment{
+    animation: armMoviment 2s
+
+}
+
+#trashCover{
+    animation: trashCover 2s;
+    transform: rotate(-32deg);
+    transform-origin: 81% 87%;
+
+}
+
+
+@keyframes deletePaper {
+    0%{
+        transform: rotate(0deg);
+        transform-origin: 60% 11%;
+        opacity:1
+    }
+    50%{
+        transform: rotate(-35deg);
+        transform-origin: 60% 11%;
+        opacity:1
+    }
+    75% {
+        transform-origin: 70% 11%;
+        transform: rotate(-35deg);
+        opacity: 1;
+    }
+    100% {
+        transform-origin: 70% 11%;
+        transform: rotate(-35deg);
+        opacity: 0;
+    }
+}
+
+@keyframes trashCover {
+    0%{
+        transform: rotate(-32deg);
+        transform-origin: 81% 87%;
+    }
+    50%{
+        transform: rotate(0deg);
+        transform-origin: 81% 87%;
+    }
+    75%{
+        transform: rotate(0deg);
+        transform-origin: 81% 87%;
+    }
+    100% {
+        transform: rotate(-32deg);
+        transform-origin: 81% 87%;
+    }
+}
+
+
+@keyframes armMoviment {
+    0%{
+        transform: rotate(0deg);
+        transform-origin: 50% 34%;
+    }
+    50%{
+        transform: rotate(-80deg);
+        transform-origin: 50% 34%;
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 34%;
+    }
+}
+
+
+
+
+
+
