@@ -16,7 +16,7 @@
 }
 
 .title{
-    font-size: 75px;
+    font-size: 60px;
     font-weight: 500;
     position: relative;
     color: #2c3e50;
@@ -53,6 +53,12 @@
 
 .card .svgContainer{
     display:none;
+    width: 220px;
+    max-width: 220px;
+    align-content: center;
+    justify-content: center;
+    height: 180px;
+    max-height: 180px;
 }
 
 .card .cardContainer > h4{
@@ -60,7 +66,7 @@
 }
 
 .card:hover{
-    transform:scale(1);
+    transform:scale(1.1);
     background-color: #5aac44
 }
 
@@ -71,19 +77,21 @@
 
 .card:hover .svgContainer{
     width: 220px;
-    height: 220px;
     max-width: 220px;
+    align-content: center;
+    justify-content: center;
+    height: 220px;
     max-height: 220px;
-    min-height: 220px;
-    align-items: center;
     display: flex;
+    align-items:flex-end;
     animation: show 0.5s;
+    margin-bottom: 20px;
 }
 
 
 .card:hover .cardContainer > h4{
     display:flex;
-    animation: showDescription 1s;
+    animation: showDescription 0.5s;
     color:#FFF
 
 }
@@ -163,20 +171,5 @@
     }
     100%{
         opacity:1
-    }
-}
-
-@keyframes cardTurn {
-    0%{
-        transform:scale(1) rotateY(0deg);
-        background-color: #FFF
-    }
-    100%{
-        transform:scale(1.1) rotateY(90deg);
-        background-color: #FFF
-    }
-    100%{
-        transform:scale(1.1) rotateY(360deg);
-        background-color: #5aac44
     }
 }

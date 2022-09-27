@@ -8,7 +8,7 @@ function Features () {
 
     return (
         <div className={style.container}>
-            <h1 className={style.title}>FEATURES</h1>
+            <h1 className={style.title}>Features</h1>
             <h4 className={style.description}> Awesome features to boost your productivity!</h4>
             <div className={style.cardsWrapper}>
                 <ul className={style.cardList}>

@@ -25,10 +25,11 @@ function App() {
     };
 
   }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
-        <header className={!scroll ? "AppHeaderTop": "AppHeaderScroll"}>
+        <header className={!scroll && user == null ? "AppHeaderTop": "AppHeaderScroll"}>
           <Navbar
             setLoginModalIsOpen={setLoginModalIsOpen}
             setSignupModalIsOpen={setSignupModalIsOpen}
