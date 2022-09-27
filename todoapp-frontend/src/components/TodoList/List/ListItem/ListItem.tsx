@@ -1,4 +1,4 @@
-import React, { SetStateAction } from 'react';
+import React, { SetStateAction, useEffect, useRef } from 'react';
 import style from '../ListItem/ListItem.module.scss'
 import { ActivityItem } from '../../../../types/ActivityItem';
 import PendingListItem from './PendingListItem/PendingListItem';
@@ -14,9 +14,13 @@ interface Props {
 }
 
 
-
 function ListItem ({ activityItem, setActivitiesList,token,user}: Props){
 
+    const showPendingListEffect = useRef< null | HTMLLIElement >(null);
+    
+    useEffect(() => {
+        showPendingListEffect.current?.classList.add(`${style.show}`);
+    })
 
     if (activityItem.status === "completed"){
         return (
@@ -27,14 +31,14 @@ function ListItem ({ activityItem, setActivitiesList,token,user}: Props){
     }
     else if (activityItem.status === "editing"){
         return (
-            <li className={`${style.listItem} ${style.show}`}>
+            <li className={`${style.listItem} ${style.editing}`}>
                 <EditingListItem activityItem={activityItem} setActivitiesList={setActivitiesList} token={token} user={user}></EditingListItem>
             </li>
         )
     }
     else {
         return (
-            <li className={`${style.listItem} ${style.show}`}>
+            <li ref={showPendingListEffect} className={`${style.listItem}`}>
                 <PendingListItem activityItem={activityItem} setActivitiesList={setActivitiesList} token={token} user={user}></PendingListItem>
             </li>
         )

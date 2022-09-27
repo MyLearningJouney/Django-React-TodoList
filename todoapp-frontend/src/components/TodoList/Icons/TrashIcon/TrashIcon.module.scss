@@ -1,12 +1,25 @@
 .listItemTrashIcon{
-    display:flex !important;
-    width:33%;
-    justify-content:center;
-  }
+  cursor:pointer;
+  display:flex !important;
+  width:33%;
+  justify-content:center;
+  padding: 5px 5px;
+  color: rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+}
 
-  .hide{
-    visibility: hidden;
-    display:flex !important;
-    width:33%;
-    justify-content:center;
-  }
+.listItemTrashIcon:hover{
+  cursor: pointer;
+  color: #ff3e4e;
+  transition: all 0.25s ease;
+  transform: scale(1.4);
+  filter: drop-shadow(0px 8px 2.5px rgba(255, 62, 78, 0.6));
+  margin-top: -7px;
+}
+
+.hide{
+  visibility: hidden;
+  display:flex !important;
+  width:33%;
+  justify-content:center;
+}

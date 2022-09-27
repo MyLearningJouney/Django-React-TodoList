@@ -1,0 +1,74 @@
+.sqliteSvg{
+    width:150px
+}
+
+
+.sqliteSvg:hover{
+    fill:#5aac44;
+}
+
+.sqliteSvg:hover > path{
+    fill:#5aac44;
+}
+
+.sqliteSvg:hover > .squareLogo > path{
+    fill:#5aac44;
+}
+
+
+.sqliteSvg:hover > .squareLogo{
+    animation: squareLogo 2s;
+}
+
+.sqliteSvg:hover > .square{
+    animation: squareMoviment 2s;
+    fill:#5aac44;
+}
+
+.sqliteSvg:hover > .feather{
+    animation: featherMoviment 2s;
+}
+
+.square{
+    opacity:0
+}
+
+
+@keyframes squareMoviment{
+    0%{
+        transform: translate(-35px);
+        opacity:1
+    }
+    80%{
+        transform: translate(0px);
+        opacity:1
+    }
+    100%{
+        transform: translate(0px);
+        opacity:0
+    }
+}
+
+@keyframes squareLogo{
+    0%{
+        opacity:0
+    }
+    80%{
+        opacity:0
+    }
+    100%{
+        opacity:1
+    }
+}
+
+@keyframes featherMoviment{
+    0%{
+        transform: translate(35px);
+    }
+    80%{
+        transform: translate(0px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}

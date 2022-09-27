@@ -5,11 +5,13 @@
     border-radius: 5px;
     filter: drop-shadow(1px 5px 6px rgba(187, 187, 187, 0.8));
     margin: 15px 0;
-    transition: all 0.4s ease-out;
-    opacity: 1;
+    opacity: 0;
+    transition: all 0.25s ease-out;
 }
 .listItem:hover{
-  filter: drop-shadow(1px 5px 6px rgba(0, 0, 0, 0.9));
+  transform:scale(1.05);
+  transition: all 0.25s ease;
+
 }
 
 .listItem.show {
@@ -17,11 +19,21 @@
 
 }
 
+.listItem.editing {
+  opacity: 1;
+}
+
 .listItem.completedActivity{
   background-color: #d6ecd2;
   opacity: 1;    
   filter:none;
 }
+
+
+.listItem.completedActivity:hover{
+  transform:scale(1);
+}
+
   
 .listTextWrapper{
   width:85%;

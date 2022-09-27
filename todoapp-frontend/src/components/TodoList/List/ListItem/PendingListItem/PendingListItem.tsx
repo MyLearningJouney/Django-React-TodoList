@@ -17,7 +17,7 @@ interface Props {
 }
 
 function PendingListItem ({ activityItem, setActivitiesList, token, user}: Props){
-
+    
     return(
             <>
                 <div className={style.listTextWrapper}>

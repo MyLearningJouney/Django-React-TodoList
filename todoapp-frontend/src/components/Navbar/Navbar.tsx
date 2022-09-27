@@ -5,12 +5,13 @@ import { User } from '../../types/User';
 
 interface Props {
     setLoginModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
+    setSignupModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
     onClick?: React.MouseEventHandler<HTMLAnchorElement>
     setUser: React.Dispatch<SetStateAction<any>>
     user?: User | null
 }
 
-function Navbar ({setLoginModalIsOpen, setUser, user} :Props){
+function Navbar ({setLoginModalIsOpen, setUser, user,setSignupModalIsOpen} :Props){
 
     function logoutBtn(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>){
         event.preventDefault()
@@ -29,6 +30,7 @@ function Navbar ({setLoginModalIsOpen, setUser, user} :Props){
                     <ul className={style.navigationlist}>
                         <li><Link className={style.navLink} to={"/home"}>Home</Link></li>
                         <li><Link className={style.navLink} to={"/about"}>About</Link></li>
+                        <li><Link className={style.navLink} to={"/features"}>Features</Link></li>
                         <li><Link className={style.navLink} to={"/contact"}>Contact</Link></li>
                     </ul>
                 </div>
@@ -39,8 +41,8 @@ function Navbar ({setLoginModalIsOpen, setUser, user} :Props){
                         </ul>
                     ) : (
                         <ul className={style.buttonsList}>
-                            <li><Link className={style.signButtons} to={""} onClick={() => setLoginModalIsOpen(true)}>Sign up</Link></li>
-                            <li><Link className={style.signButtons} to={""} onClick={() => setLoginModalIsOpen(true)}>Sign in </Link></li>
+                            <li><Link className={style.loginButton} to={""} onClick={() => setLoginModalIsOpen(true)}>Log in </Link></li>
+                            <li><Link className={style.signInButton} to={""} onClick={() => setSignupModalIsOpen(true)}>Sign up</Link></li>
                         </ul>
                     )}
                 </div>

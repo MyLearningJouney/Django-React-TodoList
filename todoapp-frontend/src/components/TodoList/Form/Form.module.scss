@@ -7,10 +7,21 @@
   background-color: #FFF;
   border-radius: 5px;
   filter: drop-shadow(1px 5px 6px rgba(187, 187, 187, 0.8));
+  transition: all 0.25s ease;
 }
 
 .formContentWrapper{
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+}
+
+.inputForm:hover{
+  transform:scale(1.05);
+  transition: all 0.25s ease;
+}
+
+.inputForm:active{
+  transform:scale(1.05);
+  transition: all 0.25s ease;
 }

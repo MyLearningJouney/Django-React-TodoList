@@ -1,0 +1,25 @@
+.typescriptSvg{
+    width:150px
+}
+
+
+
+.typescriptSvg:hover .turnAnimation{
+    animation: turnAnimation 3s;
+    fill:#5aac44;
+}
+
+
+
+@keyframes turnAnimation{
+    0%{
+        transform: rotateY(0deg);
+        transform-origin: 50% 0%;
+    }
+    100%{
+        transform: rotateY(360deg);
+        transform-origin: 50% 0%;
+    }
+}
+
+
