@@ -1,0 +1,56 @@
+.reactSvg{
+    width:150px
+}
+
+.reactSvg:hover{
+    fill:#5aac44;
+}
+
+.reactSvg:hover .ball{
+    fill:#5aac44;
+}
+
+.reactSvg:hover .firstElipse{
+    animation: rotateElipse 3s ;
+    fill:#5aac44;
+}
+
+.reactSvg:hover .secondElipse{
+    animation: rotateElipseInverse 3s;
+    fill:#5aac44;
+}
+
+.reactSvg:hover .thirdElipse{
+    animation: rotateElipse 3s;
+    fill:#5aac44;
+}
+
+
+
+
+
+
+
+@keyframes rotateElipse{
+    0%{
+        transform: rotate(0deg);
+        transform-origin: 50% 45%;
+    }
+    100%{
+
+        transform: rotate(360deg);
+        transform-origin: 50% 45%;
+    }
+}
+
+@keyframes rotateElipseInverse{
+    0%{
+        transform: rotate(0deg);
+        transform-origin: 50% 45%;
+    }
+    100%{
+
+        transform: rotate(-360deg);
+        transform-origin: 50% 45%;
+    }
+}

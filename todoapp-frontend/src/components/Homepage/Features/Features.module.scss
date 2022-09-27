@@ -60,7 +60,7 @@
 }
 
 .card:hover{
-    transform:scale(1.1);
+    transform:scale(1);
     background-color: #5aac44
 }
 
@@ -86,6 +86,19 @@
     animation: showDescription 1s;
     color:#FFF
 
+}
+
+.animationContainer{
+    width: 275px;
+    height: 375px;
+    padding: 5px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cardContainer{
@@ -150,5 +163,20 @@
     }
     100%{
         opacity:1
+    }
+}
+
+@keyframes cardTurn {
+    0%{
+        transform:scale(1) rotateY(0deg);
+        background-color: #FFF
+    }
+    100%{
+        transform:scale(1.1) rotateY(90deg);
+        background-color: #FFF
+    }
+    100%{
+        transform:scale(1.1) rotateY(360deg);
+        background-color: #5aac44
     }
 }

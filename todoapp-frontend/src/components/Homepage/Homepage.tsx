@@ -1,7 +1,7 @@
 import { SetStateAction } from 'react';
 import style from '../Homepage/Homepage.module.scss'
-import DeleteSvg from '../Svg/FeaturesSvg/DeleteSvg/DeleteSvg';
 import Home from '../Svg/FeaturesSvg/ReadSvg/ReadSvg';
+import About from './About/About';
 import Features from './Features/Features';
 import Hero from './Hero/Hero';
 
@@ -19,11 +19,11 @@ function Homepage ({setSignupModalIsOpen}:Props) {
                     setSignupModalIsOpen={setSignupModalIsOpen}
                 />
             </section>
+            <section className={style.about}>
+                <About />
+            </section>
             <section className={style.features}>
                 <Features />
-            </section>
-            <section className={style.about}>
-                <DeleteSvg />
             </section>
             <section className={style.contact}>
                 <Home />

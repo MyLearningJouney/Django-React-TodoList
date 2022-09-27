@@ -10,10 +10,27 @@ main{
     margin: 0 auto;
 }
 
-.App-header{
+.AppHeaderTop{
+
     position:sticky;
     z-index:5;
     left: 0;
     right: 0;
     top: 0;
+    background: #d6ecd2 none repeat scroll 0% 0%;
+    box-shadow: none;
+    transition: all 0.25s ease-in-out
+}
+
+.AppHeaderScroll{
+
+    position:sticky;
+    z-index:5;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    box-shadow: rgb(200, 200, 200) 0px 8px 16px;
+    transition: all 0.25s ease-in-out
+
 }

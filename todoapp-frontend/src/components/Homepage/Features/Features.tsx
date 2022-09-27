@@ -13,38 +13,46 @@ function Features () {
             <div className={style.cardsWrapper}>
                 <ul className={style.cardList}>
                     <li className={style.card}>
-                        <div className={style.cardContainer}>
-                            <h1 className={style.cardTitle}> C </h1>
-                            <h4 className={style.cardDescription}> Create </h4>
-                            <div className={style.svgContainer}>
-                                <CreateSvg />
+                        <div className={style.animationContainer}>
+                            <div className={style.cardContainer}>
+                                <h1 className={style.cardTitle}> C </h1>
+                                <h4 className={style.cardDescription}> Create </h4>
+                                <div className={style.svgContainer}>
+                                    <CreateSvg />
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li className={style.card}>
-                        <div className={style.cardContainer}>
-                            <h1 className={style.cardTitle}> R </h1>
-                            <h4 className={style.cardDescription}> Read </h4>
-                            <div className={style.svgContainer}>
-                                <ReadSvg />
+                        <div className={style.animationContainer}>
+                            <div className={style.cardContainer}>
+                                <h1 className={style.cardTitle}> R </h1>
+                                <h4 className={style.cardDescription}> Read </h4>
+                                <div className={style.svgContainer}>
+                                    <ReadSvg />
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li className={style.card}>
-                        <div className={style.cardContainer}>
-                            <h1 className={style.cardTitle}> U </h1>
-                            <h4 className={style.cardDescription}> Update </h4>
-                            <div className={style.svgContainer}>
-                                <UpdateSvg />
+                        <div className={style.animationContainer}>
+                            <div className={style.cardContainer}>
+                                <h1 className={style.cardTitle}> U </h1>
+                                <h4 className={style.cardDescription}> Update </h4>
+                                <div className={style.svgContainer}>
+                                    <UpdateSvg />
+                                </div>
                             </div>
-                        </div>
+                        </div>    
                     </li>
                     <li className={style.card}>
-                        <div className={style.cardContainer}>
-                            <h1 className={style.cardTitle}> D </h1>
-                            <h4 className={style.cardDescription}> Delete </h4>
-                            <div className={style.svgContainer}>
-                                <DeleteSvg />
+                        <div className={style.animationContainer}>
+                            <div className={style.cardContainer}>
+                                <h1 className={style.cardTitle}> D </h1>
+                                <h4 className={style.cardDescription}> Delete </h4>
+                                <div className={style.svgContainer}>
+                                    <DeleteSvg />
+                                </div>
                             </div>
                         </div>
                     </li>

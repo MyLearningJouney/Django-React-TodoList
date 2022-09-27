@@ -1,0 +1,72 @@
+.djangoSvg{
+    width:150px
+}
+
+
+.djangoSvg:hover{
+    fill:#5aac44;
+}
+
+.djangoSvg:hover > path{
+    fill:#5aac44;
+}
+
+.djangoSvg:hover > rect{
+    fill:#5aac44;
+}
+
+.djangoSvg:hover .letterD{
+    animation: letterDAnimation 1s
+}
+
+.djangoSvg:hover .letterJ{
+    animation: letterJAnimation 1.5s;
+
+}
+
+.djangoSvg:hover .square{
+    animation: squareAnimation 1.5s;
+
+}
+
+
+
+
+@keyframes letterDAnimation{
+    0%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes letterJAnimation{
+    0%{
+        transform: rotate(-70deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes squareAnimation{
+    0%{
+        transform: scale(1.7);
+        transform-origin: 75% 10%;
+        opacity:0
+    }
+    75%{
+        transform: scale(1.7);
+        transform-origin: 75% 10%;
+        opacity:0
+    }
+    100%{
+        transform: scale(1);
+        transform-origin: 75% 10%;
+        opacity:1
+    }
+}
+
+
+
