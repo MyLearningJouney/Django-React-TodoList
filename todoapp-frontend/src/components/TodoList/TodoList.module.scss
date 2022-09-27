@@ -3,9 +3,24 @@
     justify-content: center;
   }
   
-  .inputFormWrapper{
-    display: flex;
-    justify-content: center;
-  }
-  
-  
+.inputFormWrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.titleWrapper{
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+}
+
+.title{
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.todoSection{
+  max-width: 1280px;
+  margin: 0 auto;
+}

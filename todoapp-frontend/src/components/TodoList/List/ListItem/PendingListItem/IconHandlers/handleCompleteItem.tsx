@@ -29,6 +29,8 @@ function handleComplete({activityItem,setActivitiesList,event,token,user}: Props
         createdDate: DateFormatDB(completedActivity.createdDate),
         completedDate: DateFormatDB(completedActivity.completedDate), 
         user: user.userid}
+    
+    console.log(completedActiviyDB)
 
     TodoAppDataService.updateTodo(activityItem.id, completedActiviyDB, token)
     .then((response) => {

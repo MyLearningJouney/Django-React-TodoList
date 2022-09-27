@@ -1,0 +1,106 @@
+.createSvg{
+    width: 220px;
+}
+
+
+#box2animation{
+    /*transform: translate(171px,-103px);*/
+    opacity: 1;
+    animation: box2Move 2s;
+
+}
+
+#box3animation{
+    animation: box3Move 2s;
+    opacity: 0;
+}
+
+#leftarm{
+    animation: leftArmMove 2s;
+
+}
+
+#rightarm{
+    animation: rightArmMove 2s;
+}
+
+#guyHand{
+    animation: guyHandMove 1s;
+    animation-delay: 1s;
+}
+
+@keyframes leftArmMove {
+    0%{
+        transform: rotate(0deg);
+        transform-origin: 73% 45%;    }
+    50%{
+        transform: rotate(90deg);
+        transform-origin: 73% 45%;
+        }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 73% 45%;     
+    }
+}
+
+@keyframes rightArmMove {
+    0%{
+        transform: rotate(0deg);
+        transform-origin: 68% 48%;
+    }
+    50%{
+        transform: rotate(55deg);
+        transform-origin: 68% 48%;
+        
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 68% 48%;
+    }
+}
+
+@keyframes box3Move {
+    0%{
+        transform: rotate(0deg);
+        transform-origin: 68% 48%;
+        opacity: 1;
+    }
+    50%{
+        transform: rotate(-18deg);
+        transform-origin: 20% 120%;
+        opacity: 1;
+        
+    }
+    100% {
+        transform: rotate(-18deg);
+        transform-origin: 13% 153%;
+        opacity: 1;
+    }
+}
+
+@keyframes guyHandMove {
+    0%{
+        transform: translate(0px,0px);
+    }
+    50%{
+        transform: translate(15px,-5px);
+    }
+    100%{
+        transform: translate(0px,0px);
+    }
+}
+
+@keyframes box2Move {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    85%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,182 @@
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+.cardsWrapper{
+    flex-direction: row;
+    display: flex;
+}
+
+.title{
+    font-size: 75px;
+    font-weight: 500;
+    position: relative;
+    color: #2c3e50;
+    margin: 0 auto;
+    padding-bottom: 35px;
+}
+
+.description{
+    font-size: 30px;
+    font-weight: 300;
+    position: relative;
+    color: #2c3e50;
+    margin: 0 auto;
+    padding-bottom: 35px;
+}
+
+.cardList{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none outside none;
+    padding: 0;
+}
+
+.card{
+    background-color: #fff;
+    filter: drop-shadow(1px 5px 6px rgba(187, 187, 187, 0.8));
+    width:275px;
+    height:375px;
+    padding: 5px;
+    border-radius: 30px;
+    transition: all 0.25s ease-out;
+}
+
+.card .svgContainer{
+    display:none;
+}
+
+.card .cardContainer > h4{
+    display:none;
+}
+
+.card:hover{
+    transform:scale(1);
+    background-color: #5aac44
+}
+
+.card:hover .cardContainer > h1{
+    display:none;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover .svgContainer{
+    width: 220px;
+    height: 220px;
+    max-width: 220px;
+    max-height: 220px;
+    min-height: 220px;
+    align-items: center;
+    display: flex;
+    animation: show 0.5s;
+}
+
+
+.card:hover .cardContainer > h4{
+    display:flex;
+    animation: showDescription 1s;
+    color:#FFF
+
+}
+
+.animationContainer{
+    width: 275px;
+    height: 375px;
+    padding: 5px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    flex-direction: column;
+}
+
+.cardTitle{
+    font-size:100px;
+    color:#2c3e50
+}
+
+.cardDescription{
+    font-size: 32px;
+}
+
+
+.card2 > h1 {
+    font-size:100px
+}
+.card3 > h1 {
+    font-size:100px
+}
+.card4 > h1 {
+    font-size:100px
+}
+
+
+@keyframes show {
+    0%{
+        opacity:0
+    }
+    25%{
+        opacity:0
+    }
+    50%{
+        opacity:0
+    }
+    85%{
+        opacity:1
+    }
+    100%{
+        opacity:1
+    }
+}
+
+@keyframes showDescription {
+    0%{
+        opacity:0
+    }
+    25%{
+        opacity:0
+    }
+    40%{
+        opacity:0
+    }
+    65%{
+        opacity:0
+    }
+    100%{
+        opacity:1
+    }
+}
+
+@keyframes cardTurn {
+    0%{
+        transform:scale(1) rotateY(0deg);
+        background-color: #FFF
+    }
+    100%{
+        transform:scale(1.1) rotateY(90deg);
+        background-color: #FFF
+    }
+    100%{
+        transform:scale(1.1) rotateY(360deg);
+        background-color: #5aac44
+    }
+}

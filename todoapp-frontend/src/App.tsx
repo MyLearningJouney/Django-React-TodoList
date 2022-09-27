@@ -2,39 +2,48 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import TodoList from "./components/TodoList/TodoList";
 import { BrowserRouter } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginModal from "./components/Login/LoginModal";
+import SignupModal from "./components/Signup/SignupModal";
+import Homepage from "./components/Homepage/Homepage";
 
 function App() {
   const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
+  const [signupModalIsOpen, setSignupModalIsOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [token, setToken] = useState('');
+  const [scroll, setScroll]= useState(0)
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY)
+    };
+    window.addEventListener('scroll', handleScroll);
 
-  async function signup(user = null) {
-    // default user to null
-    setUser(user);
-  }
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
 
+  }, []);
   return (
     <BrowserRouter>
       <div className="App">
-        <header className="App-header">
+        <header className={!scroll ? "AppHeaderTop": "AppHeaderScroll"}>
           <Navbar
             setLoginModalIsOpen={setLoginModalIsOpen}
+            setSignupModalIsOpen={setSignupModalIsOpen}
             setUser={setUser}
             user={user}
           />
         </header>
         <main>
-          <div>
             {user ? (
               <TodoList user={user} token={token} />
             ) : (
-              <p> Logue-se </p>
+              <Homepage             
+                setSignupModalIsOpen={setSignupModalIsOpen}
+              />
             )}
-          </div>
-        </main>
         {loginModalIsOpen && (
           <LoginModal
             setLoginModalIsOpen={setLoginModalIsOpen}
@@ -43,6 +52,12 @@ function App() {
             setToken={setToken}
           />
         )}
+        {signupModalIsOpen && (
+          <SignupModal
+            setSignupModalIsOpen={setSignupModalIsOpen}
+          />
+        )}
+        </main>
       </div>
     </BrowserRouter>
   );

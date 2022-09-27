@@ -1,0 +1,154 @@
+.heroSvg{
+    width: 600px;
+}
+
+.firstLine{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 2.5s linear forwards;
+}
+
+#firstBall{
+    opacity: 1;
+    animation: showFirstBall 1s 
+}
+
+
+.secondLine{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 2.5s linear forwards;
+    animation-delay: 1s;
+}
+
+#secondBall{
+    opacity: 1;
+    animation: showSecondBall 2s
+}
+
+.thirdLine{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 2.5s linear forwards;
+    animation-delay: 2s;
+}
+
+#thirdBall{
+    animation: bounceThirdBall 1s ease-in-out infinite;
+    animation-delay:2s
+}
+
+#head{
+    animation: headMoviment 3s ease-in-out;
+    transform: rotate(40deg);
+    transform-origin: 70% 28%;
+}
+
+#rightArm{
+    animation: bounceArm 1s ease-in-out infinite;
+    animation-delay:2s
+}
+
+
+
+@keyframes showFirstBall {
+    0% {
+        opacity: 0;
+        transform: scale(1.4);
+        transform-origin: 54% 10%;
+    }
+    25% {
+        opacity: 0;
+        transform: scale(1.4);
+        transform-origin: 54% 10%;
+    }
+    50% {
+        opacity: 0;
+        transform: scale(1.4);
+        transform-origin: 54% 10%;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: 54% 10%;
+    }
+  }
+
+  @keyframes showSecondBall {
+    0% {
+        opacity: 0;
+        transform: scale(1.4);
+        transform-origin: 54% 29%;
+    }
+    25% {
+        opacity: 0;
+        transform: scale(1.4);
+        transform-origin: 54% 29%;
+    }
+    80% {
+        opacity: 0;
+        transform: scale(1.4);
+        transform-origin: 54% 29%;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: 54% 29%;    
+    }
+  }
+
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+@keyframes bounceThirdBall {
+    0% {
+        transform:translate(0,0px)
+    }
+    50% {
+        transform:translate(0,-30px)
+    }
+    100% {
+        transform:translate(0,0px)
+    }
+  }
+
+  @keyframes bounceArm {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 65% 41%;
+    }
+    50% {
+        transform: rotate(5deg);
+        transform-origin: 65% 41%;
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 65% 41%;
+    }
+  }
+
+
+  @keyframes headMoviment {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 70% 28%;
+    }
+    35% {
+        transform: rotate(0deg);
+        transform-origin: 70% 28%;
+    }
+    60% {
+        transform: rotate(40deg);
+        transform-origin: 70% 28%;
+    }
+    100% {
+        transform: rotate(40deg);
+        transform-origin: 70% 28%;
+    }
+    
+  }
+

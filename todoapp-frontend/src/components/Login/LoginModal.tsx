@@ -1,11 +1,12 @@
 import React, { SetStateAction, useState } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import style from '../Login/LoginModal.module.scss'
 import handleUsername  from '../Login/handlers/handleUsername' 
 import handlePassword from './handlers/handlePassword';
 import TodoAppDataService from '../../services/TodoAppDataService'
 import { User } from '../../types/User';
-import DateFormat from '../../utils/DateFormat';
+import WaveDown from '../Svg/WaveDown/WaveDown';
+import WaveUp from '../Svg/WaveUp/WaveUp';
 
 interface Props {
     setLoginModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
@@ -20,14 +21,14 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState('');
+    const [usernameLabel, setUsernameLabel] = useState(false)
+    const [passwordLabel, setPasswordLabel] = useState(false)
 
     function loginBtn(event: React.MouseEvent<HTMLButtonElement>){
         event.preventDefault()
         setLoginModalIsOpen(false)
         user = {username:username,password:password}
         login(user)
-        console.log(DateFormat(new Date(Date.now())))
-        console.log(new Date())
     }
 
     async function login(user:User){
@@ -37,13 +38,14 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
                 const newUser = {...user, userid:response.data.userid}
                 setUser(newUser);
                 localStorage.setItem('token', response.data.token);
-                localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('user', JSON.stringify(newUser));
                 setError('');
                 })
             .catch( e =>{
                 console.log("ERRRRRRRRRRRRRRRRRRRRRRRROU")
                 console.log('login', e);
                 setError(e.toString());
+                console.log(error)
             });
     }
     
@@ -56,16 +58,36 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
             <button className={style.closeBtn} onClick={() => setLoginModalIsOpen(false)}>
                 X
             </button>
+            <WaveUp />
             <div className={style.modalHeader}>
                 <h5 className={style.heading}>Login</h5>
+            </div>
+            <div>
+                <p className={style.headingParagraph}>
+                    Welcome Back! 
+                </p>
             </div>
             <div className={style.modalContent}>
             <form className={style.inputForm}>
                 <div className={style.formContentWrapper}>
-                    <label>Username</label>
-                    <input type={'text'} name={'activityInput'} placeholder={'Type your username'} onChange={event => handleUsername({event, setUsername})}/>
-                    <label>Password</label>
-                    <input type={'password'} name={'activityInput'} placeholder={'Type your password'} onChange={event => handlePassword({event, setPassword})}/>
+                    <label className={usernameLabel ? style.show: style.hide}>Username</label>
+                    <input 
+                        type={'text'} 
+                        name={'activityInput'} 
+                        placeholder={'Username'} 
+                        onChange={event => handleUsername({event, setUsername})}
+                        onFocus={() => setUsernameLabel(true)}
+                        onBlur={() => setUsernameLabel(false)}
+                        />
+                    <label className={passwordLabel ? style.show: style.hide}>Password</label>
+                    <input 
+                        type={'password'} 
+                        name={'activityInput'} 
+                        placeholder={'Password'} 
+                        onChange={event => handlePassword({event, setPassword})}
+                        onFocus={() => setPasswordLabel(true)}
+                        onBlur={() => setPasswordLabel(false)}
+                        />
                 </div>
             </form>                
             </div>
@@ -82,10 +104,7 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
                 </button>
                 </div>
             </div>
-            <div>
-                <p>{username}</p>
-                <p>{password}</p>
-            </div>
+            <WaveDown />
             </div>
         </div>
         </>
