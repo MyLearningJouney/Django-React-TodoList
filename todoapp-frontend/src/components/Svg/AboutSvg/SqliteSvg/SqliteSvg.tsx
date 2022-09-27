@@ -46,7 +46,7 @@ function SqliteSvg (){
                 fill="#d6ecd2"
                 className={style.feather}
                 stroke="#fdfffa"
-                stroke-width="0.3px"
+                strokeWidth="0.3px"
             />
         </svg>
     );

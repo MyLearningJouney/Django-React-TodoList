@@ -97,10 +97,10 @@ function HeroSvg (){
             <g className={style.secondLine}> {/*Second Line*/}
                 <path
                 d="M52.678 155.774h259.66H52.677M52.678 177.113h164.16H52.677z"
-                fill-opacity="0"
+                fillOpacity="0"
                 stroke="#5aac44"
-                stroke-width="6"
-                stroke-linecap="round"
+                strokeWidth="6"
+                strokeLinecap="round"
                 />
             </g>
             <path d="M365 212H0v-84h365v84zM6 206h353v-72H6v72z" fill="#e5e5e5" />
@@ -108,10 +108,10 @@ function HeroSvg (){
             <g className={style.thirdLine}> {/*Third Line*/}
                 <path
                 d="M52.678 283.774h259.66H52.677M52.678 305.113h164.16H52.677z"
-                fill-opacity="0"
+                fillOpacity="0"
                 stroke="#5aac44"
-                stroke-width="6"
-                stroke-linecap="round"
+                strokeWidth="6"
+                strokeLinecap="round"
                 />
             </g>
             <path d="M365 340H0v-84h365v84zM6 334h353v-72H6v72z" fill="#e5e5e5" />
@@ -119,10 +119,10 @@ function HeroSvg (){
             <g className={style.firstLine}> {/*First Lines*/}
                 <path
                 d="M55.678 27.774h259.66H55.677M55.678 49.113h164.16H55.677z"
-                fill-opacity="0"
+                fillOpacity="0"
                 stroke="#5aac44"
-                stroke-width="6"
-                stroke-linecap="round"
+                strokeWidth="6"
+                strokeLinecap="round"
                 />
             </g>
             <path d="M368 84H3V0h365v84zM9 78h353V6H9v72z" fill="#e5e5e5" />

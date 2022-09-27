@@ -33,8 +33,8 @@ function ReadSvg (){
                   fillOpacity="0"
                   d="M161.13 45.552 h226.858 M161.13 64.195 H304.54"
                   stroke="#ccc"
-                  stroke-width="6"
-                  stroke-linecap="round"
+                  strokeWidth="6"
+                  strokeLinecap="round"
                 />
               </g>
               <g id={style.animationFirstCheck}> {/* First check ball */}
@@ -55,8 +55,8 @@ function ReadSvg (){
                   d="M161.13 159.552h226.858M161.13 178.195H304.54"
                   fill="#ccc"
                   stroke="#ccc"
-                  stroke-width="6"
-                  stroke-linecap="round"
+                  strokeWidth="6"
+                  strokeLinecap="round"
                 />
               </g>
               <g id={style.animationSecondCheck}>{/* Second check ball */}
@@ -77,8 +77,8 @@ function ReadSvg (){
                   d="M161.13 273.552h226.858M161.13 292.195H304.54"
                   fill="#ccc"
                   stroke="#ccc"
-                  stroke-width="6"
-                  stroke-linecap="round"
+                  strokeWidth="6"
+                  strokeLinecap="round"
                 />
               </g>
               <g id={style.animationThirdCheck}>{/* Third check ball */}
