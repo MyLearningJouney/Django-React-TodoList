@@ -1,9 +1,9 @@
 import { SetStateAction } from 'react';
 import style from '../Homepage/Homepage.module.scss'
-import Home from '../Svg/FeaturesSvg/ReadSvg/ReadSvg';
 import About from './About/About';
 import Features from './Features/Features';
 import Hero from './Hero/Hero';
+import Team from './Team/Team';
 
 interface Props {
     setSignupModalIsOpen: React.Dispatch<SetStateAction<boolean>>,
@@ -25,8 +25,13 @@ function Homepage ({setSignupModalIsOpen}:Props) {
             <section className={style.features}>
                 <Features />
             </section>
-            <section className={style.contact}>
-                <Home />
+            <section className={style.team}>
+                <Team />
+            </section>
+            <section className={style.team}>
+                <div>
+                    <h1> Diiiiiiiiiv</h1>
+                </div>
             </section>
         </div>
     )
