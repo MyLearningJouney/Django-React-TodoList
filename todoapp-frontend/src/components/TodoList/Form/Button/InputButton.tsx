@@ -8,7 +8,7 @@ interface Props {
 function InputButton ({ type }: Props){
     return (
         <button className={style.addBtn} type={type}>
-            <i className="fa-solid fa-check"></i>
+            <i className={`${style.addBtnIcon} fa-solid fa-check`}></i>
         </button>
     )
 }

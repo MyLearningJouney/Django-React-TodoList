@@ -1,0 +1,50 @@
+.container{
+    width: 100%;
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    height:100%
+}
+
+.signUpButton{
+    padding: 11px 75px;
+    border-radius: 12px;
+    border: none;
+    color: #fff;
+    background: #5aac44;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.25s ease;
+    top: 30%;
+
+}
+
+.signUpButton:hover {
+    box-shadow: 0 10px 20px -10px rgba(72, 138, 54, 0.8);
+    top: calc(30% - 5px);
+    background: #5aac44;
+    transition: all 0.25s ease;
+
+}
+
+.title{
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    color: #2c3e50;
+    margin: 0 auto;
+    padding-bottom: 35px;
+}
+
+.description{
+    font-size: 30px;
+    font-weight: 300;
+    position: relative;
+    color: #2c3e50;
+    margin: 0 auto;
+    padding-bottom: 45px;
+}

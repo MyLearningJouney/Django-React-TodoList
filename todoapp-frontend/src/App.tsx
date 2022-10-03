@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import LoginModal from "./components/Login/LoginModal";
 import SignupModal from "./components/Signup/SignupModal";
 import Homepage from "./components/Homepage/Homepage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
@@ -25,10 +26,11 @@ function App() {
     };
 
   }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
-        <header className={!scroll ? "AppHeaderTop": "AppHeaderScroll"}>
+        <header className={!scroll && user == null ? "AppHeaderTop": "AppHeaderScroll"}>
           <Navbar
             setLoginModalIsOpen={setLoginModalIsOpen}
             setSignupModalIsOpen={setSignupModalIsOpen}
@@ -58,6 +60,7 @@ function App() {
           />
         )}
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

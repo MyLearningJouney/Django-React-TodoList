@@ -2,7 +2,7 @@ import React, { SetStateAction } from 'react';
 import { ActivityItem } from '../../../../../types/ActivityItem';
 import { User } from '../../../../../types/User';
 import CancelIcon from '../../../Icons/CancelIcon/CancelIcon';
-import CheckIcon from '../../../Icons/CheckIcon/CheckIcon';
+//import CheckIcon from '../../../Icons/CheckIcon/CheckIcon';
 import PencilIcon from '../../../Icons/PencilIcon/PencilIcon';
 import TrashIcon from '../../../Icons/TrashIcon/TrashIcon';
 import style from '../CompletedListItem/CompletedListItem.module.scss'
