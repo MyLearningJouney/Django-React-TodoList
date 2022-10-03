@@ -1,5 +1,5 @@
 .createSvg{
-    width: 220px;
+    width: 100%;
 }
 
 
@@ -28,6 +28,7 @@
     animation: guyHandMove 1s;
     animation-delay: 1s;
 }
+
 
 @keyframes leftArmMove {
     0%{

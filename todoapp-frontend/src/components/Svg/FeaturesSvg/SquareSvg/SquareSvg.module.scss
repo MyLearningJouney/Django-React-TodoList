@@ -1,0 +1,27 @@
+.square{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+    animation: squareAnimation 1s;
+    opacity:1
+}
+
+.square rect{
+    transform: translate(calc(50% - 0px), calc(50% - 20px)) rotate(45deg);
+    opacity:1
+}
+
+
+@keyframes squareAnimation {
+    0%{
+        opacity: 0;
+        transform:scale(0)
+
+    }
+    100%{
+        opacity: 1;
+        transform:scale(1.1)
+    }
+}
