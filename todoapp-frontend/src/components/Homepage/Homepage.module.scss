@@ -22,7 +22,31 @@
     border-radius: 60px 0px 0px 60px;
 }
 
-
 .about{
+    align-items: center;
+    height: 60vh;
     background-color:#fdfffa
 }
+
+.features{
+    align-items: center;
+    height: 90vh;
+}
+
+.team{
+    align-items: center;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.cta{
+    align-items: center;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.contact{
+    align-items: center;
+    height: 70vh;
+    align-items: center;
+    }
