@@ -12,8 +12,7 @@ https://user-images.githubusercontent.com/12852839/193716667-902d2e83-de5d-4479-
 
 
 
-**Things i've learned doing this project so far:
-**
+### Things i've learned doing this project so far:
  - Working with React and Functional Components.
  - Stabilishing communication from Front-end and Back-End
  - Forms Validation
@@ -26,8 +25,7 @@ https://user-images.githubusercontent.com/12852839/193716667-902d2e83-de5d-4479-
  - Configuring Django Backend
  - 
 
-**Things to improve:
-**
+### Things to improve:
  - Improve styles with some patterns/guide like SCSS to avoid repeat code
  - Some components could be more componetized 
  - Implement web responsive layout
