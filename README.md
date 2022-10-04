@@ -20,14 +20,9 @@ Things i've learned doing this project so far:
  - Configuring Django Backend
  - 
 
-Things i could improve:
+Things to improve:
 
  - Improve styles with some patterns/guide like SCSS to avoid repeat code
  - Some components could be more componetized 
- - 
-
-
-
-Improvement of the previous React Todo List Project. Added a Backend Layer to Persist Data. This project is a Todo List, with Frontend in React and Backend with Django, here i have add some functionalities like Authentication, Data Persistence and CRUD  for "activities" from the list. 
-
-Testing changes
+ - Implement web responsive layout
+ -
