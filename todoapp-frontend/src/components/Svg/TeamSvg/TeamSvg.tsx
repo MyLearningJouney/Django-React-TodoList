@@ -1,4 +1,3 @@
-import style from '../TeamSvg/TeamSvg.module.scss'
 
 function TeamSvg (){
     return (
