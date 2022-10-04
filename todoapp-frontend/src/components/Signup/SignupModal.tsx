@@ -86,6 +86,7 @@ function SignupModal ({setSignupModalIsOpen}: Props){
                         onChange={event => handleUsername({event, setUsername, password, validatePassword,setIsDisable, setHaveLetter, sethaveCapital, sethaveNumber,setHaveLength})}
                         onFocus={() => setUsernameLabel(true)}
                         onBlur={() => setUsernameLabel(false)}
+                        autoComplete="off"
                         required
                     />
                     <label className={passwordLabel ? style.show: style.hide}>Password</label>
@@ -98,6 +99,7 @@ function SignupModal ({setSignupModalIsOpen}: Props){
                         onChange={event => handlePassword({event, setPassword, setHaveLetter, sethaveCapital, sethaveNumber,setHaveLength, validatePassword, username, setIsDisable, setIsPasswordEmpty})}
                         onFocus={() => setPasswordLabel(true)}
                         onBlur={() => setPasswordLabel(false)}
+                        autoComplete="off"
                         required 
                     />
                     <label className={confirmPasswordLabel ? style.show: style.hide}>Confirm Password</label>
@@ -109,6 +111,7 @@ function SignupModal ({setSignupModalIsOpen}: Props){
                         onChange={event => handleValidatePassword({event, setValidatePassword, password, validatePassword, username, setIsDisable, setHaveLetter, sethaveCapital, sethaveNumber,setHaveLength})}
                         onFocus={() => setConfirmPasswordLabel(true)}
                         onBlur={() => setConfirmPasswordLabel(false)}
+                        autoComplete="off"
                         required
                     />
                 </div>

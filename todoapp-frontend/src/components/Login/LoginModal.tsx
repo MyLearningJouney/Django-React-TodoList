@@ -78,6 +78,7 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
                         onChange={event => handleUsername({event, setUsername})}
                         onFocus={() => setUsernameLabel(true)}
                         onBlur={() => setUsernameLabel(false)}
+                        autoComplete="off"
                         />
                     <label className={passwordLabel ? style.show: style.hide}>Password</label>
                     <input 
@@ -87,6 +88,7 @@ function LoginModal ({user, setUser, setToken, setLoginModalIsOpen}: Props){
                         onChange={event => handlePassword({event, setPassword})}
                         onFocus={() => setPasswordLabel(true)}
                         onBlur={() => setPasswordLabel(false)}
+                        autoComplete="off"
                         />
                 </div>
             </form>                

@@ -24,6 +24,7 @@ function Input({type, name, placeholder, setActivity}: Props){
         id={name}
         placeholder={placeholder}
         onChange={handleChange}
+        autoComplete="off"
         />
     )
 }
