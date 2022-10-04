@@ -25,4 +25,5 @@ Things to improve:
  - Improve styles with some patterns/guide like SCSS to avoid repeat code
  - Some components could be more componetized 
  - Implement web responsive layout
- -
+ - Error Handling
+ 
