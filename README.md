@@ -1,16 +1,22 @@
-# Django-React-TodoList
+<div id="header" align="center">
+ <h1> Django-React-TodoList </h1>
+</div>
 
-Hello guys, and welcome to my project!
+Hello guys, and welcome to my project! 👋
 
 The purpose of this project its to practice coding skills and learning more about React, Typescript and Django  
 
 Innitialy i've imagined this project to be only a simple Todo List with some funcionality, but later i decided to improve the project with some data persistence, simulating some more real situation.
 
-Check it out: 
+Check it out: 👇
 
-https://user-images.githubusercontent.com/12852839/193716667-902d2e83-de5d-4479-add0-b4325a369ae1.mp4
+<div id="video" align="center">
 
 
+https://user-images.githubusercontent.com/12852839/193717283-037174ee-1d45-4c90-b154-85fcbbd05179.mp4
+
+
+</div>
 
 ### Things i've learned doing this project so far:
  - Working with React and Functional Components.
